@@ -338,7 +338,7 @@ const messages = {
           contact: "Contato",
           sendAt: "Data de Agendamento",
           sentAt: "Data de Envio",
-          saveMessage: "Salvar Mensagem no Ticket"
+          saveMessage: "Salvar Mensagem no Atendimento"
         },
         buttons: {
           okAdd: "Adicionar",
@@ -368,7 +368,7 @@ const messages = {
         successKanban: "Lane salva com sucesso."
       },
       chat: {
-        noTicketMessage: "Selecione um ticket para começar a conversar."
+        noTicketMessage: "Selecione um atendimento para começar a conversar."
       },
       uploads: {
         titles: {
@@ -416,7 +416,7 @@ const messages = {
         }
       },
       transferTicketModal: {
-        title: "Transferir Ticket",
+        title: "Transferir atendimento",
         fieldLabel: "Digite para buscar usuários",
         fieldQueueLabel: "Transferir para fila",
         fieldQueuePlaceholder: "Selecione uma fila",
@@ -437,7 +437,7 @@ const messages = {
         }
       },
       newTicketModal: {
-        title: "Criar Ticket",
+        title: "Novo atendimento",
         fieldLabel: "Digite para pesquisar o contato",
         add: "Adicionar",
         buttons: {
@@ -531,7 +531,7 @@ const messages = {
         table: {
           name: "Nome",
           color: "Cor",
-          tickets: "Tickets",
+          tickets: "Atendimentos",
           actions: "Ações"
         },
         buttons: {
@@ -767,9 +767,9 @@ const messages = {
       },
       about: {
         aboutthe: "Sobre o",
-        copyright: "© 2024 - Funcionando com ticketz",
+        copyright: "",
         buttonclose: "Fechar",
-        title: "Sobre o ticketz",
+        title: "Sobre o SysWhats",
         abouttitle: "Origem e melhorias",
         aboutdetail:
           "O ticketz é derivado indireto do projeto Whaticket com melhorias compartilhadas pelos desenvolvedores do sistema EquipeChat através do canal VemFazer no youtube, posteriormente melhoradas por Claudemir Todo Bom",
@@ -812,7 +812,7 @@ const messages = {
         table: {
           name: "Nome",
           color: "Cor",
-          tickets: "Tickets",
+          tickets: "Atendimentos",
           contacts: "Contatos",
           actions: "Ações",
           id: "Id",
@@ -892,7 +892,7 @@ const messages = {
           title: "Ação fora do expediente",
           options: {
             pending: "Deixar como pendente",
-            closed: "Fechar ticket"
+            closed: "Fechar atendimento"
           }
         },
         IgnoreGroupMessages: {
@@ -961,11 +961,11 @@ const messages = {
           title: "Visibilidade da mensagem",
           options: {
             respectMessageQueue: "Respeitar fila da mensagem",
-            respectTicketQueue: "Respeitar fila do ticket"
+            respectTicketQueue: "Respeitar fila do atendimento"
           }
         },
         keepQueueAndUser: {
-          title: "Manter fila e usuário no ticket fechado",
+          title: "Manter fila e usuário no atendimento fechado",
           options: {
             enabled: "Ativado",
             disabled: "Desativado"
@@ -975,8 +975,8 @@ const messages = {
           title: "Carência após vencimento (dias)"
         },
         ticketAcceptedMessage: {
-          title: "Mensagem de ticket aceito",
-          placeholder: "Digite sua mensagem de ticket aceito aqui"
+          title: "Mensagem de atendimento aceito",
+          placeholder: "Digite sua mensagem de atendimento aceito aqui"
         },
         transferMessage: {
           title: "Mensagem de transferência",
@@ -1029,9 +1029,9 @@ const messages = {
         TagsMode: {
           title: "Modo de Tags",
           options: {
-            ticket: "Ticket",
+            ticket: "Atendimento",
             contact: "Contato",
-            both: "Ticket e Contacto"
+            both: "Atendimento e Contato"
           }
         }
       },
@@ -1051,7 +1051,7 @@ const messages = {
       messagesInput: {
         placeholderOpen: "Digite uma mensagem",
         placeholderClosed:
-          "Reabra ou aceite esse ticket para enviar uma mensagem.",
+          "Reabra ou aceite esse atendimento para enviar uma mensagem.",
         signMessage: "Assinar",
         replying: "Respondendo",
         editing: "Editando"
@@ -1078,9 +1078,9 @@ const messages = {
           placeholder: "Insira aqui a informação que deseja registrar"
         },
         confirmationModal: {
-          title: "Deletar o ticket do contato",
+          title: "Deletar o atendimento do contato",
           message:
-            "Atenção! Todas as mensagens relacionadas ao ticket serão perdidas."
+            "Atenção! Todas as mensagens relacionadas ao atendimento serão perdidas."
         },
         buttons: {
           delete: "Excluir",
@@ -1178,7 +1178,7 @@ const messages = {
           "Erro ao enviar mensagem do WhatsApp. Verifique a página de conexões.",
         ERR_DELETE_WAPP_MSG: "Não foi possível excluir a mensagem do WhatsApp.",
         ERR_EDITING_WAPP_MSG: "Não foi possível editar a mensagem do WhatsApp.",
-        ERR_OTHER_OPEN_TICKET: "Já existe um tíquete aberto para este contato.",
+        ERR_OTHER_OPEN_TICKET: "Já existe um atendimento aberto para este contato.",
         ERR_SESSION_EXPIRED: "Sessão expirada. Por favor entre.",
         ERR_USER_CREATION_DISABLED:
           "A criação do usuário foi desabilitada pelo administrador.",
@@ -1186,11 +1186,11 @@ const messages = {
         ERR_DUPLICATED_CONTACT: "Já existe um contato com este número.",
         ERR_NO_SETTING_FOUND: "Nenhuma configuração encontrada com este ID.",
         ERR_NO_CONTACT_FOUND: "Nenhum contato encontrado com este ID.",
-        ERR_NO_TICKET_FOUND: "Nenhum tíquete encontrado com este ID.",
+        ERR_NO_TICKET_FOUND: "Nenhum atendimento encontrado com este ID.",
         ERR_NO_USER_FOUND: "Nenhum usuário encontrado com este ID.",
         ERR_NO_WAPP_FOUND: "Nenhum WhatsApp encontrado com este ID.",
         ERR_CREATING_MESSAGE: "Erro ao criar mensagem no banco de dados.",
-        ERR_CREATING_TICKET: "Erro ao criar tíquete no banco de dados.",
+        ERR_CREATING_TICKET: "Erro ao criar atendimento no banco de dados.",
         ERR_FETCH_WAPP_MSG:
           "Erro ao buscar a mensagem no WhtasApp, talvez ela seja muito antiga.",
         ERR_QUEUE_COLOR_ALREADY_EXISTS:
@@ -1210,7 +1210,7 @@ const messages = {
         instructions:
           "Acessando o endereço abaixo você pode criar uma conta com 50 ligações gratuitas para teste",
         coupon:
-          "Ao contratar o serviço use o cupom TICKETZ para ganhar um desconto!"
+          "Entre em contato com os administradores para adquirir um cupom de desconto!"
       },
       openHours: {
         title: "Horários de Funcionamento",
@@ -1268,9 +1268,9 @@ const messages = {
       },
       ticketz: {
         registration: {
-          header: "Cadastre-se na base de usuários do Ticketz",
+          header: "Cadastre-se na base de usuários do SysWhats",
           description:
-            "Preencha os campos abaixo para se cadastrar na base de usuários do Ticketz e receber novidades sobre o projeto.",
+            "Preencha os campos abaixo para se cadastrar na base de usuários do SysWhats e receber novidades sobre o projeto.",
           name: "Nome",
           country: "País",
           phoneNumber: "Número de Whatsapp",

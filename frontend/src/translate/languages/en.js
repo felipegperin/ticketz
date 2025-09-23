@@ -2,1311 +2,1312 @@ const messages = {
   en: {
     translations: {
       date: {
-        yesterday: "Yesterday"
+        yesterday: "Ontem"
       },
       common: {
-        search: "Search",
-        filter: "Filter",
-        edit: "Edit",
-        delete: "Delete",
-        cancel: "Cancel",
-        save: "Save",
-        confirm: "Confirm",
-        confirmation: "Confirmation",
-        areyousure: "Are you sure?",
-        close: "Close",
-        closed: "Closed",
-        error: "Error",
-        success: "Success",
-        actions: "Actions",
-        add: "Add",
-        name: "Name",
+        search: "Buscar",
+        filter: "Filtrar",
+        edit: "Editar",
+        delete: "Excluir",
+        cancel: "Cancelar",
+        save: "Salvar",
+        confirm: "Confirmar",
+        confirmation: "Confirmação",
+        areyousure: "Você tem certeza?",
+        close: "Fechar",
+        closed: "Fechado",
+        error: "Erro",
+        success: "Sucesso",
+        actions: "Ações",
+        add: "Adicionar",
+        name: "Nome",
         email: "Email",
-        phone: "Phone",
-        language: "Language",
-        company: "Company",
-        user: "User",
-        users: "Users",
-        connection: "Connection",
-        connections: "Connections",
-        queue: "Queue",
-        queues: "Queues",
-        contact: "Contact",
-        messages: "Messages",
-        whatsappNumber: "WhatsApp Number",
-        dueDate: "Due Date",
-        copy: "Copy",
-        paste: "Paste",
-        proceed: "Proceed",
-        enabled: "Enabled",
-        disabled: "Disabled",
-        undefined: "Undefined",
-        yes: "Yes",
-        no: "No",
-        noqueue: "No queue",
-        rating: "Rating",
-        transferTo: "Transfer to",
-        key: "Key",
-        value: "Value",
+        phone: "Telefone",
+        language: "Idioma",
+        company: "Empresa",
+        user: "Usuário",
+        users: "Usuários",
+        connection: "Conexão",
+        connections: "Conexões",
+        queue: "Fila",
+        queues: "Filas",
+        contact: "Contato",
+        messages: "Mensagens",
+        whatsappNumber: "Número do Whatsapp",
+        dueDate: "Data de vencimento",
+        copy: "Copiar",
+        paste: "Colar",
+        proceed: "Prosseguir",
+        enabled: "Ativado",
+        disabled: "Desativado",
+        undefined: "Indefinido",
+        yes: "Sim",
+        no: "Não",
+        noqueue: "Sem fila",
+        rating: "Avaliação",
+        transferTo: "Transferir para",
+        key: "Chave",
+        value: "Valor",
         validations: {
-          required: "This field is required",
-          short: "Value too short",
-          long: "Value too long",
-          invalid: "Invalid value",
-          invalidEmail: "Invalid email",
-          invalidPhone: "Invalid phone number"
+          required: "Este campo é obrigatório",
+          short: "Valor muito curto",
+          long: "Valor muito longo",
+          invalid: "Valor inválido",
+          invalidEmail: "Email inválido",
+          invalidPhone: "Número de telefone inválido"
         },
-        serverTime: "Server time:",
-        clientTime: "Client time:",
-        differenceMinutes: "Difference: {{count}} minute(s)"
+        serverTime: "Hora do servidor:",
+        clientTime: "Hora do cliente:",
+        differenceMinutes: "Diferença: {{count}} minuto(s)"
       },
       signup: {
-        title: "Sign Up",
+        title: "Cadastre-se",
         toasts: {
-          success: "User created successfully! Log in now!!!",
-          fail: "Error creating user. Check the provided data."
+          success: "Usuário criado com sucesso! Faça seu login!!!.",
+          fail: "Erro ao criar usuário. Verifique os dados informados."
         },
         form: {
-          name: "Name",
+          name: "Nome",
           email: "Email",
-          password: "Password"
+          password: "Senha"
         },
         buttons: {
-          submit: "Sign Up",
-          login: "Already have an account? Log in!"
+          submit: "Cadastrar",
+          login: "Já tem uma conta? Entre!"
         }
       },
       login: {
         title: "Login",
         form: {
           email: "Email",
-          password: "Password"
+          password: "Senha"
         },
         buttons: {
-          submit: "Log In",
-          register: "Don't have an account? Sign up!"
+          submit: "Entrar",
+          register: "Não tem uma conta? Cadastre-se!"
         }
       },
       companies: {
-        title: "Register Company",
+        title: "Cadastrar Empresa",
         form: {
-          name: "Company Name",
-          plan: "Plan",
+          name: "Nome da Empresa",
+          plan: "Plano",
           token: "Token",
-          submit: "Register",
-          success: "Company created successfully!"
+          submit: "Cadastrar",
+          success: "Empresa criada com sucesso!"
         }
       },
       auth: {
         toasts: {
-          success: "Login successful!"
+          success: "Login efetuado com sucesso!"
         },
         token: "Token"
       },
       dashboard: {
-        usersOnline: "Users online",
-        ticketsWaiting: "Tickets waiting",
-        ticketsOpen: "Open tickets",
-        ticketsDone: "Resolved tickets",
-        totalTickets: "Total tickets",
-        newContacts: "New contacts",
-        avgServiceTime: "Average service time",
-        avgWaitTime: "Average wait time",
-        ticketsOnPeriod: "Tickets in the period",
-        userCurrentStatus: "Current status",
+        usersOnline: "Usuários online",
+        ticketsWaiting: "Atendimentos aguardando",
+        ticketsOpen: "Atendimentos abertos",
+        ticketsDone: "Atendimentos resolvidos",
+        totalTickets: "Total de atendimentos",
+        newContacts: "Novos contatos",
+        avgServiceTime: "Tempo médio de atendimento",
+        avgWaitTime: "Tempo médio de espera",
+        ticketsOnPeriod: "Atendimentos no período",
+        userCurrentStatus: "Status (Atual)",
         filter: {
-          period: "Period",
-          custom: "Custom",
-          last3days: "Last 3 days",
-          last7days: "Last 7 days",
-          last14days: "Last 14 days",
-          last30days: "Last 30 days",
-          last90days: "Last 90 days"
+          period: "Período",
+          custom: "Personalizado",
+          last3days: "Últimos 3 dias",
+          last7days: "Últimos 7 dias",
+          last14days: "Últimos 14 dias",
+          last30days: "Últimos 30 dias",
+          last90days: "Últimos 90 dias"
         },
         date: {
-          start: "Start date",
-          end: "End date"
+          start: "Data inicial",
+          end: "Data final"
         },
         ticketCountersLabels: {
-          created: "Created",
-          closed: "Closed"
+          created: "Criado",
+          closed: "Fechado"
         },
         blog: {
-          title: "Ticketz Blog",
-          loading: "Loading posts...",
-          error: "Could not load blog posts right now.",
-          empty: "No blog posts found.",
-          showAll: "Show all posts",
-          showLess: "Show less",
-          openPost: "Read post",
-          previous: "Previous post",
-          next: "Next post"
+          title: "Blog do Ticketz",
+          loading: "Carregando posts...",
+          error: "Nao foi possivel carregar os posts do blog agora.",
+          empty: "Nenhum post encontrado.",
+          showAll: "Exibir todos os posts",
+          showLess: "Exibir menos",
+          openPost: "Ler post",
+          previous: "Post anterior",
+          next: "Proximo post"
         }
       },
       connections: {
-        title: "Connections",
+        title: "Conexões",
         toasts: {
-          deleted: "WhatsApp connection successfully deleted!"
+          deleted: "Conexão com o WhatsApp excluída com sucesso!"
         },
         confirmationModal: {
-          deleteTitle: "Delete",
-          deleteMessage: "Are you sure? This action cannot be undone.",
-          disconnectTitle: "Disconnect",
+          deleteTitle: "Deletar",
+          deleteMessage: "Você tem certeza? Essa ação não pode ser revertida.",
+          disconnectTitle: "Desconectar",
           disconnectMessage:
-            "Are you sure? You will need to scan the QR Code again.",
-          closeTickets: "Close all open tickets from this connection"
+            "Tem certeza? Você precisará ler o QR Code novamente.",
+          closeTickets: "Fechar todos os atendimentos desta conexão"
         },
         buttons: {
-          add: "Add WhatsApp",
-          disconnect: "Disconnect",
-          tryAgain: "Try Again",
+          add: "Adicionar WhatsApp",
+          disconnect: "desconectar",
+          tryAgain: "Tentar novamente",
           qrcode: "QR CODE",
-          newQr: "New QR CODE",
-          connecting: "Connecting"
+          newQr: "Novo QR CODE",
+          connecting: "Conectando"
         },
         toolTips: {
           disconnected: {
-            title: "Failed to initiate WhatsApp session",
+            title: "Falha ao iniciar sessão do WhatsApp",
             content:
-              "Make sure your phone is connected to the internet and try again, or request a new QR Code."
+              "Certifique-se de que seu celular esteja conectado à internet e tente novamente, ou solicite um novo QR Code"
           },
           qrcode: {
-            title: "Waiting for QR Code scan",
+            title: "Esperando leitura do QR Code",
             content:
-              "Click the 'QR CODE' button and scan the QR Code with your phone to start the session."
+              "Clique no botão 'QR CODE' e leia o QR Code com o seu celular para iniciar a sessão"
           },
           connected: {
-            title: "Connection established!"
+            title: "Conexão estabelecida!"
           },
           timeout: {
-            title: "Connection to the phone has been lost",
+            title: "A conexão com o celular foi perdida",
             content:
-              "Make sure your phone is connected to the internet and WhatsApp is open, or click 'Disconnect' to get a new QR Code."
+              "Certifique-se de que seu celular esteja conectado à internet e o WhatsApp esteja aberto, ou clique no botão 'Desconectar' para obter um novo QR Code"
           },
-          refresh: "Refresh",
-          disconnect: "Disconnect",
-          scan: "Scan QR Code",
-          newQr: "Request new QR Code",
-          retry: "Try Again"
+          refresh: "Refazer conexão",
+          disconnect: "Desconectar",
+          scan: "Ler QR Code",
+          newQr: "Gerar novo QR Code",
+          retry: "Tentar novamente"
         },
         table: {
-          name: "Name",
+          name: "Nome",
           status: "Status",
-          lastUpdate: "Last Update",
-          default: "Default",
-          actions: "Actions",
-          session: "Session"
+          lastUpdate: "Última atualização",
+          default: "Padrão",
+          actions: "Ações",
+          session: "Sessão"
         }
       },
       internalChat: {
-        title: "Internal Chat"
+        title: "Chat Interno"
       },
       whatsappModal: {
         title: {
-          add: "Add WhatsApp",
-          edit: "Edit WhatsApp"
+          add: "Adicionar WhatsApp",
+          edit: "Editar WhatsApp"
         },
         form: {
-          name: "Name",
-          default: "Default"
+          name: "Nome",
+          default: "Padrão"
         },
         buttons: {
-          okAdd: "Add",
-          okEdit: "Save",
-          cancel: "Cancel"
+          okAdd: "Adicionar",
+          okEdit: "Salvar",
+          cancel: "Cancelar"
         },
-        success: "WhatsApp saved successfully."
+        success: "WhatsApp salvo com sucesso."
       },
       qrCode: {
-        message: "Scan the QR Code to start the session"
+        message: "Leia o QrCode para iniciar a sessão"
       },
       contacts: {
-        title: "Contacts",
+        title: "Contatos",
         toasts: {
-          deleted: "Contact successfully deleted!"
+          deleted: "Contato excluído com sucesso!"
         },
-        searchPlaceholder: "Search...",
+        searchPlaceholder: "Pesquisar...",
         confirmationModal: {
-          deleteTitle: "Delete ",
-          importTitlte: "Import Contacts",
+          deleteTitle: "Deletar ",
+          importTitlte: "Importar contatos",
           deleteMessage:
-            "Are you sure you want to delete this contact? All related interactions will be lost.",
-          importMessage: "Do you want to import all contacts from the phone?"
+            "Tem certeza que deseja deletar este contato? Todos os atendimentos relacionados serão perdidos.",
+          importMessage: "Deseja importar todos os contatos do telefone?"
         },
         buttons: {
-          import: "Import Contacts",
-          add: "Add Contact"
+          import: "Importar Contatos",
+          add: "Adicionar Contato"
         },
         table: {
-          name: "Name",
+          name: "Nome",
           whatsapp: "WhatsApp",
           email: "Email",
-          actions: "Actions"
+          actions: "Ações"
         }
       },
       contactModal: {
         title: {
-          add: "Add Contact",
-          edit: "Edit Contact"
+          add: "Adicionar contato",
+          edit: "Editar contato"
         },
         form: {
-          mainInfo: "Contact Information",
-          extraInfo: "Additional Information",
-          name: "Name",
-          number: "WhatsApp Number",
+          mainInfo: "Dados do contato",
+          extraInfo: "Informações adicionais",
+          name: "Nome",
+          number: "Número do Whatsapp",
           email: "Email",
-          extraName: "Field Name",
-          extraValue: "Value",
-          disableBot: "Disable chatbot"
+          extraName: "Nome do campo",
+          extraValue: "Valor",
+          disableBot: "Desabilitar chatbot"
         },
         buttons: {
-          addExtraInfo: "Add Information",
-          okAdd: "Add",
-          okEdit: "Save",
-          cancel: "Cancel"
+          addExtraInfo: "Adicionar informação",
+          okAdd: "Adicionar",
+          okEdit: "Salvar",
+          cancel: "Cancelar"
         },
-        success: "Contact saved successfully."
+        success: "Contato salvo com sucesso."
       },
       queueModal: {
         title: {
-          add: "Add Queue",
-          edit: "Edit Queue"
+          add: "Adicionar fila",
+          edit: "Editar fila"
         },
         form: {
-          name: "Name",
-          color: "Color",
-          greetingMessage: "Greeting Message",
-          complationMessage: "Completion Message",
-          outOfHoursMessage: "Out of Hours Message",
-          ratingMessage: "Rating Message",
-          transferMessage: "Transfer Message",
+          name: "Nome",
+          color: "Cor",
+          greetingMessage: "Mensagem de saudação",
+          complationMessage: "Mensagem de conclusão",
+          outOfHoursMessage: "Mensagem de fora de expediente",
+          ratingMessage: "Mensagem de avaliação",
+          transferMessage: "Mensagem de Transferência",
           token: "Token"
         },
         toasts: {
-          saved: "Queue saved successfully"
+          saved: "Fila salva com sucesso"
         },
         buttons: {
-          okAdd: "Add",
-          okEdit: "Save",
-          cancel: "Cancel",
-          attach: "Attach File"
+          okAdd: "Adicionar",
+          okEdit: "Salvar",
+          cancel: "Cancelar",
+          attach: "Anexar Arquivo"
         },
         serviceHours: {
-          dayWeek: "Day of the week",
-          startTimeA: "Start Time - Shift A",
-          endTimeA: "End Time - Shift A",
-          startTimeB: "Start Time - Shift B",
-          endTimeB: "End Time - Shift B",
-          monday: "Monday",
-          tuesday: "Tuesday",
-          wednesday: "Wednesday",
-          thursday: "Thursday",
-          friday: "Friday",
-          saturday: "Saturday",
-          sunday: "Sunday"
+          dayWeek: "Dia da semana",
+          startTimeA: "Hora Inicial - Turno A",
+          endTimeA: "Hora Final - Turno A",
+          startTimeB: "Hora Inicial - Turno B",
+          endTimeB: "Hora Final - Turno B",
+          monday: "Segunda-feira",
+          tuesday: "Terça-feira",
+          wednesday: "Quarta-feira",
+          thursday: "Quinta-feira",
+          friday: "Sexta-feira",
+          saturday: "Sábado",
+          sunday: "Domingo"
         }
       },
       userModal: {
         title: {
-          add: "Add User",
-          edit: "Edit User"
+          add: "Adicionar usuário",
+          edit: "Editar usuário"
         },
         listItems: {
-          adminProfile: "Administrator",
-          userProfile: "User"
+          adminProfile: "Administrador",
+          userProfile: "Usuário"
         },
         form: {
-          name: "Name",
+          name: "Nome",
           email: "Email",
-          password: "Password",
-          profile: "Profile"
+          password: "Senha",
+          profile: "Perfil"
         },
         buttons: {
-          okAdd: "Add",
-          okEdit: "Save",
-          cancel: "Cancel"
+          okAdd: "Adicionar",
+          okEdit: "Salvar",
+          cancel: "Cancelar"
         },
-        success: "User saved successfully."
+        success: "Usuário salvo com sucesso."
       },
       scheduleModal: {
         title: {
-          add: "New Schedule",
-          edit: "Edit Schedule"
+          add: "Novo Agendamento",
+          edit: "Editar Agendamento"
         },
         form: {
-          body: "Message",
-          contact: "Contact",
-          sendAt: "Scheduled Date",
-          sentAt: "Sent Date",
-          saveMessage: "Save Message in Ticket"
+          body: "Mensagem",
+          contact: "Contato",
+          sendAt: "Data de Agendamento",
+          sentAt: "Data de Envio",
+          saveMessage: "Salvar Mensagem no Atendimento"
         },
         buttons: {
-          okAdd: "Add",
-          okEdit: "Save",
-          cancel: "Cancel"
+          okAdd: "Adicionar",
+          okEdit: "Salvar",
+          cancel: "Cancelar"
         },
-        success: "Schedule saved successfully."
+        success: "Agendamento salvo com sucesso."
       },
       tagModal: {
         title: {
-          add: "New Tag",
-          edit: "Edit Tag",
-          addKanban: "New Lane",
-          editKanban: "Edit Lane"
+          add: "Nova Tag",
+          edit: "Editar Tag",
+          addKanban: "Nova Lane",
+          editKanban: "Editar Lane"
         },
         form: {
-          name: "Name",
-          color: "Color",
+          name: "Nome",
+          color: "Cor",
           kanban: "Kanban"
         },
         buttons: {
-          okAdd: "Add",
-          okEdit: "Save",
-          cancel: "Cancel"
+          okAdd: "Adicionar",
+          okEdit: "Salvar",
+          cancel: "Cancelar"
         },
-        success: "Tag saved successfully.",
-        successKanban: "Lane saved successfully."
+        success: "Tag salvo com sucesso.",
+        successKanban: "Lane salva com sucesso."
       },
       chat: {
-        noTicketMessage: "Select a ticket to start the conversation."
+        noTicketMessage: "Selecione um atendimento para começar a conversar."
       },
       uploads: {
         titles: {
-          titleUploadMsgDragDrop: "DRAG AND DROP FILES IN THE FIELD BELOW",
-          titleFileList: "List of file(s)"
+          titleUploadMsgDragDrop: "ARRASTE E SOLTE ARQUIVOS NO CAMPO ABAIXO",
+          titleFileList: "Lista de arquivo(s)"
         }
       },
       todolist: {
-        title: "Tasks list",
+        title: "Lista de tarefas",
         form: {
-          name: "Task name"
+          name: "Nome da tarefa"
         },
         buttons: {
-          add: "Add",
-          save: "Save"
+          add: "Adicionar",
+          save: "Salvar"
         }
       },
       ticketsManager: {
         buttons: {
-          newTicket: "New"
+          newTicket: "Novo"
         }
       },
       ticketsQueueSelect: {
-        placeholder: "Queues"
+        placeholder: "Filas"
       },
       tickets: {
         toasts: {
-          deleted: "The ticket you were working on has been deleted."
+          deleted: "O atendimento que você estava foi deletado."
         },
         notification: {
-          message: "Message from",
-          nomessages: "No messages"
+          message: "Mensagem de",
+          nomessages: "Sem novas mensagens"
         },
         tabs: {
-          open: { title: "Open" },
-          closed: { title: "Closed" },
-          groups: { title: "Groups" },
-          search: { title: "Search" }
+          open: { title: "Abertas" },
+          closed: { title: "Resolvidos" },
+          groups: { title: "Grupos" },
+          search: { title: "Busca" }
         },
         search: {
-          placeholder: "Search for ticket and messages",
-          filterByTags: "Filter by tags",
-          filterByUsers: "Filter by users"
+          placeholder: "Buscar atendimento e mensagens"
         },
         buttons: {
-          showAll: "All"
+          showAll: "Todos"
         }
       },
       transferTicketModal: {
-        title: "Transfer Ticket",
-        fieldLabel: "Type to search for users",
-        fieldQueueLabel: "Transfer to queue",
-        fieldQueuePlaceholder: "Select a queue",
-        noOptions: "No user found with that name",
+        title: "Transferir atendimento",
+        fieldLabel: "Digite para buscar usuários",
+        fieldQueueLabel: "Transferir para fila",
+        fieldQueuePlaceholder: "Selecione uma fila",
+        noOptions: "Nenhum usuário encontrado com esse nome",
         buttons: {
-          ok: "Transfer",
-          cancel: "Cancel"
+          ok: "Transferir",
+          cancel: "Cancelar"
         }
       },
       ticketsList: {
-        pendingHeader: "Pending",
-        assignedHeader: "Assigned",
-        noTicketsTitle: "Nothing here!",
-        noTicketsMessage: "No ticket found with this status or searched term",
+        pendingHeader: "Aguardando",
+        assignedHeader: "Atendendo",
+        noTicketsTitle: "Nada aqui!",
+        noTicketsMessage:
+          "Nenhum atendimento encontrado com esse status ou termo pesquisado",
         buttons: {
-          accept: "Accept"
+          accept: "Aceitar"
         }
       },
       newTicketModal: {
-        title: "Create Ticket",
-        fieldLabel: "Type to search for contact",
-        add: "Add",
+        title: "Novo atendimento",
+        fieldLabel: "Digite para pesquisar o contato",
+        add: "Adicionar",
         buttons: {
-          ok: "Save",
-          cancel: "Cancel"
+          ok: "Salvar",
+          cancel: "Cancelar"
         }
       },
       mainDrawer: {
         listItems: {
           dashboard: "Dashboard",
-          connections: "Connections",
-          tickets: "Tickets",
-          quickMessages: "Quick Responses",
-          contacts: "Contacts",
-          queues: "Queues & Chatbot",
+          connections: "Conexões",
+          tickets: "Atendimentos",
+          quickMessages: "Respostas Rápidas",
+          contacts: "Contatos",
+          queues: "Filas & Chatbot",
           tags: "Tags",
-          administration: "Administration",
-          service: "Service",
-          users: "Users",
-          settings: "Settings",
-          helps: "Help",
+          administration: "Administração",
+          service: "Atendimento",
+          users: "Usuários",
+          settings: "Configurações",
+          helps: "Ajuda",
           messagesAPI: "API",
-          schedules: "Schedules",
-          campaigns: "Campaigns",
-          annoucements: "Announcements",
-          chats: "Internal Chat",
-          financeiro: "Financial",
-          logout: "Logout",
-          management: "Management",
+          schedules: "Agendamentos",
+          campaigns: "Campanhas",
+          annoucements: "Informativos",
+          chats: "Chat Interno",
+          financeiro: "Financeiro",
+          logout: "Sair",
+          management: "Gerência",
           kanban: "Kanban",
-          tasks: "Tasks"
+          tasks: "Tarefas"
         },
         appBar: {
           i18n: {
-            language: "English",
+            language: "Padrão 🇧🇷",
             language_short: "EN"
           },
           user: {
-            profile: "Profile",
-            subscriptionValidUntilLabel: "Subscription valid until",
-            darkmode: "Dark mode",
-            lightmode: "Light mode",
-            language: "Select language",
-            logout: "Logout"
+            profile: "Perfil",
+            subscriptionValidUntilLabel: "Assinatura válida até",
+            darkmode: "Modo escuro",
+            lightmode: "Modo claro",
+            language: "Selecionar idioma",
+            about: "Sobre",
+            logout: "Sair"
           }
         }
       },
       messagesAPI: {
         title: "API",
         textMessage: {
-          number: "Number",
-          body: "Message",
-          token: "Registered Token"
+          number: "Número",
+          body: "Mensagem",
+          token: "Token cadastrado"
         },
         mediaMessage: {
-          number: "Number",
-          body: "File Name",
-          media: "File",
-          token: "Registered Token"
+          number: "Número",
+          body: "Nome do arquivo",
+          media: "Arquivo",
+          token: "Token cadastrado"
         }
       },
       notifications: {
-        noTickets: "No notifications."
+        noTickets: "Nenhuma notificação."
       },
       quickMessages: {
-        title: "Quick Responses",
+        title: "Respostas Rápidas",
         buttons: {
-          add: "New Response"
+          add: "Nova Resposta"
         },
         dialog: {
-          shortcode: "Shortcut",
-          message: "Response"
+          shortcode: "Atalho",
+          message: "Resposta"
         }
       },
       kanban: {
         title: "Kanban",
-        searchPlaceholder: "Search",
+        searchPlaceholder: "Pesquisa",
         subMenus: {
-          list: "Panel",
+          list: "Painel",
           tags: "Lanes"
         }
       },
       tagsKanban: {
         title: "Lanes",
-        laneDefault: "Open",
+        laneDefault: "Em aberto",
         confirmationModal: {
-          deleteTitle: "Are you sure you want to delete this Lane?",
-          deleteMessage: "This action cannot be undone."
+          deleteTitle: "Você tem certeza que quer excluir esta Lane?",
+          deleteMessage: "Esta ação não pode ser revertida."
         },
         table: {
-          name: "Name",
-          color: "Color",
-          tickets: "Tickets",
-          actions: "Actions"
+          name: "Nome",
+          color: "Cor",
+          tickets: "Atendimentos",
+          actions: "Ações"
         },
         buttons: {
-          add: "New Lane"
+          add: "Nova Lane"
         },
         toasts: {
-          deleted: "Lane deleted successfully."
+          deleted: "Lane excluída com sucesso."
         }
       },
       contactLists: {
-        title: "Contact Lists",
+        title: "Listas de Contatos",
         table: {
-          name: "Name",
-          contacts: "Contacts",
-          actions: "Actions"
+          name: "Nome",
+          contacts: "Contatos",
+          actions: "Ações"
         },
         buttons: {
-          add: "New List"
+          add: "Nova Lista"
         },
         dialog: {
-          name: "Name",
-          company: "Company",
-          okEdit: "Edit",
-          okAdd: "Add",
-          add: "Add",
-          edit: "Edit",
-          cancel: "Cancel"
+          name: "Nome",
+          company: "Empresa",
+          okEdit: "Editar",
+          okAdd: "Adicionar",
+          add: "Adicionar",
+          edit: "Editar",
+          cancel: "Cancelar"
         },
         confirmationModal: {
-          deleteTitle: "Delete",
-          deleteMessage: "This action cannot be undone."
+          deleteTitle: "Excluir",
+          deleteMessage: "Esta ação não pode ser revertida."
         },
         toasts: {
-          deleted: "Record deleted",
-          created: "Record created"
+          deleted: "Registro excluído",
+          created: "Registro criado"
         }
       },
       contactListItems: {
-        title: "Contacts",
-        searchPlaceholder: "Search",
+        title: "Contatos",
+        searchPlaceholder: "Pesquisa",
         buttons: {
-          add: "New",
-          lists: "Lists",
-          import: "Import"
+          add: "Novo",
+          lists: "Listas",
+          import: "Importar"
         },
         dialog: {
-          name: "Name",
-          number: "Number",
-          whatsapp: "WhatsApp",
-          email: "Email",
-          okEdit: "Edit",
-          okAdd: "Add",
-          add: "Add",
-          edit: "Edit",
-          cancel: "Cancel"
+          name: "Nome",
+          number: "Número",
+          whatsapp: "Whatsapp",
+          email: "E-mail",
+          okEdit: "Editar",
+          okAdd: "Adicionar",
+          add: "Adicionar",
+          edit: "Editar",
+          cancel: "Cancelar"
         },
         table: {
-          name: "Name",
-          number: "Number",
-          whatsapp: "WhatsApp",
-          email: "Email",
-          actions: "Actions"
+          name: "Nome",
+          number: "Número",
+          whatsapp: "Whatsapp",
+          email: "E-mail",
+          actions: "Ações"
         },
         confirmationModal: {
-          deleteTitle: "Delete",
-          deleteMessage: "This action cannot be undone.",
-          importMessage:
-            "Do you want to import the contacts from this spreadsheet? ",
-          importTitlte: "Import"
+          deleteTitle: "Excluir",
+          deleteMessage: "Esta ação não pode ser revertida.",
+          importMessage: "Deseja importar os contatos desta planilha? ",
+          importTitlte: "Importar"
         },
         toasts: {
-          deleted: "Record deleted"
+          deleted: "Registro excluído"
         }
       },
       campaigns: {
-        title: "Campaigns",
-        searchPlaceholder: "Search",
+        title: "Campanhas",
+        searchPlaceholder: "Pesquisa",
         buttons: {
-          add: "New Campaign",
-          contactLists: "Contact Lists"
+          add: "Nova Campanha",
+          contactLists: "Listas de Contatos"
         },
         table: {
-          name: "Name",
-          whatsapp: "Connection",
-          contactList: "Contact List",
+          name: "Nome",
+          whatsapp: "Conexão",
+          contactList: "Lista de Contatos",
           status: "Status",
-          scheduledAt: "Scheduled",
-          completedAt: "Completed",
-          confirmation: "Confirmation",
-          actions: "Actions"
+          scheduledAt: "Agendamento",
+          completedAt: "Concluída",
+          confirmation: "Confirmação",
+          actions: "Ações"
         },
         dialog: {
-          new: "New Campaign",
-          update: "Edit Campaign",
-          readonly: "Read-only",
+          new: "Nova Campanha",
+          update: "Editar Campanha",
+          readonly: "Apenas Visualização",
           form: {
-            name: "Name",
-            message1: "Message 1",
-            message2: "Message 2",
-            message3: "Message 3",
-            message4: "Message 4",
-            message5: "Message 5",
-            confirmationMessage1: "Confirmation Message 1",
-            confirmationMessage2: "Confirmation Message 2",
-            confirmationMessage3: "Confirmation Message 3",
-            confirmationMessage4: "Confirmation Message 4",
-            confirmationMessage5: "Confirmation Message 5",
-            messagePlaceholder: "Message content",
-            whatsapp: "Connection",
+            name: "Nome",
+            message1: "Mensagem 1",
+            message2: "Mensagem 2",
+            message3: "Mensagem 3",
+            message4: "Mensagem 4",
+            message5: "Mensagem 5",
+            confirmationMessage1: "Mensagem de Confirmação 1",
+            confirmationMessage2: "Mensagem de Confirmação 2",
+            confirmationMessage3: "Mensagem de Confirmação 3",
+            confirmationMessage4: "Mensagem de Confirmação 4",
+            confirmationMessage5: "Mensagem de Confirmação 5",
+            messagePlaceholder: "Conteúdo da mensagem",
+            whatsapp: "Conexão",
             status: "Status",
-            scheduledAt: "Scheduled",
-            confirmation: "Confirmation",
-            contactList: "Contact List"
+            scheduledAt: "Agendamento",
+            confirmation: "Confirmação",
+            contactList: "Lista de Contato"
           },
           buttons: {
-            add: "Add",
-            edit: "Update",
+            add: "Adicionar",
+            edit: "Atualizar",
             okadd: "Ok",
-            cancel: "Cancel Dispatches",
-            restart: "Restart Dispatches",
-            close: "Close",
-            attach: "Attach File"
+            cancel: "Cancelar Disparos",
+            restart: "Reiniciar Disparos",
+            close: "Fechar",
+            attach: "Anexar Arquivo"
           }
         },
         confirmationModal: {
-          deleteTitle: "Delete",
-          deleteMessage: "This action cannot be undone."
+          deleteTitle: "Excluir",
+          deleteMessage: "Esta ação não pode ser revertida."
         },
         toasts: {
-          success: "Operation completed successfully",
-          cancel: "Campaign canceled",
-          restart: "Campaign restarted",
-          deleted: "Record deleted"
+          success: "Operação realizada com sucesso",
+          cancel: "Campanha cancelada",
+          restart: "Campanha reiniciada",
+          deleted: "Registro excluído"
         }
       },
       announcements: {
-        title: "Announcements",
-        searchPlaceholder: "Search",
+        title: "Informativos",
+        searchPlaceholder: "Pesquisa",
         buttons: {
-          add: "New Announcement",
-          contactLists: "Announcement Lists"
+          add: "Novo Informativo",
+          contactLists: "Listas de Informativos"
         },
         table: {
-          priority: "Priority",
+          priority: "Prioridade",
           title: "Title",
-          text: "Text",
-          mediaName: "File",
+          text: "Texto",
+          mediaName: "Arquivo",
           status: "Status",
-          actions: "Actions"
+          actions: "Ações"
         },
         dialog: {
-          edit: "Announcement Edit",
-          add: "New Announcement",
-          update: "Edit Announcement",
-          readonly: "Read-only",
+          edit: "Edição de Informativo",
+          add: "Novo Informativo",
+          update: "Editar Informativo",
+          readonly: "Apenas Visualização",
           form: {
-            priority: "Priority",
+            priority: "Prioridade",
             title: "Title",
-            text: "Text",
-            mediaPath: "File",
+            text: "Texto",
+            mediaPath: "Arquivo",
             status: "Status"
           },
           buttons: {
-            add: "Add",
-            edit: "Update",
+            add: "Adicionar",
+            edit: "Atualizar",
             okadd: "Ok",
-            cancel: "Cancel",
-            close: "Close",
-            attach: "Attach File"
+            cancel: "Cancelar",
+            close: "Fechar",
+            attach: "Anexar Arquivo"
           }
         },
         confirmationModal: {
-          deleteTitle: "Delete",
-          deleteMessage: "This action cannot be undone."
+          deleteTitle: "Excluir",
+          deleteMessage: "Esta ação não pode ser revertida."
         },
         toasts: {
-          success: "Operation completed successfully",
-          deleted: "Record deleted"
+          success: "Operação realizada com sucesso",
+          deleted: "Registro excluído"
         }
       },
       campaignsConfig: {
-        title: "Campaign Configurations",
-        intervals: "Intervals",
-        messageInterval: "Message Interval (seconds)",
-        longerIntervalAfter: "Longer Interval After (messages)",
-        longerInterval: "Longer Interval (seconds)",
-        addVariable: "Add Variable"
+        title: "Configurações de Campanhas",
+        intervals: "Intervalos",
+        messageInterval: "Intervalo entre mensagens (segundos)",
+        longerIntervalAfter: "Intervalo maior após (mensagens)",
+        longerInterval: "Intervalo maior (segundos)",
+        addVariable: "Adicionar variável"
       },
       queues: {
-        title: "Queues & Chatbot",
+        title: "Filas & Chatbot",
         table: {
-          name: "Name",
-          color: "Color",
-          greeting: "Greeting Message",
-          actions: "Actions"
+          name: "Nome",
+          color: "Cor",
+          greeting: "Mensagem de saudação",
+          actions: "Ações"
         },
         toasts: {
-          deleted: "Queue removed successfully"
+          deleted: "Fila removida com sucesso"
         },
         buttons: {
-          add: "Add Queue"
+          add: "Adicionar fila"
         },
         confirmationModal: {
-          deleteTitle: "Delete",
+          deleteTitle: "Excluir",
           deleteMessage:
-            "Are you sure? This action cannot be undone! The tickets from this queue will still exist but will no longer be assigned to any queue."
+            "Você tem certeza? Essa ação não pode ser revertida! Os atendimentos dessa fila continuarão existindo, mas não terão mais nenhuma fila atribuída."
         }
       },
       queueSelect: {
-        inputLabel: "Queues"
+        inputLabel: "Filas"
       },
       users: {
-        title: "Users",
+        title: "Usuários",
         table: {
-          name: "Name",
+          name: "Nome",
           email: "Email",
-          profile: "Profile",
-          actions: "Actions"
+          profile: "Perfil",
+          actions: "Ações"
         },
         buttons: {
-          add: "Add User"
+          add: "Adicionar usuário"
         },
         toasts: {
-          deleted: "User deleted successfully."
+          deleted: "Usuário excluído com sucesso."
         },
         confirmationModal: {
-          deleteTitle: "Delete",
+          deleteTitle: "Excluir",
           deleteMessage:
-            "All user data will be lost. Open tickets from this user will be moved to the queue."
+            "Todos os dados do usuário serão perdidos. Os atendimento abertos deste usuário serão movidos para a fila."
         }
       },
       helps: {
-        title: "Help Center"
+        title: "Central de Ajuda"
       },
       about: {
-        aboutthe: "About the",
-        copyright: "© 2024 - Powered by ticketz",
-        buttonclose: "Close",
-        title: "About ticketz",
-        abouttitle: "Origin and improvements",
+        aboutthe: "Sobre o",
+        copyright: "",
+        buttonclose: "Fechar",
+        title: "Sobre o SysWhats",
+        abouttitle: "Origem e melhorias",
         aboutdetail:
-          "ticketz is indirectly derived from the Whaticket project with improvements shared by the developers of the EquipeChat system through the VemFazer channel on YouTube, later improved by Claudemir Todo Bom",
-        aboutauthorsite: "Author's site",
-        aboutwhaticketsite: "Whaticket Community site on Github",
-        aboutvemfazersite: "Vem Fazer channel site on Github",
-        licenseheading: "Open Source License",
+          "O ticketz é derivado indireto do projeto Whaticket com melhorias compartilhadas pelos desenvolvedores do sistema EquipeChat através do canal VemFazer no youtube, posteriormente melhoradas por Claudemir Todo Bom",
+        aboutauthorsite: "Site do autor",
+        aboutwhaticketsite: "Site do Whaticket Community no Github",
+        aboutvemfazersite: "Site do canal Vem Fazer no Github",
+        licenseheading: "Licença em Código Aberto",
         licensedetail:
-          "ticketz is licensed under the GNU Affero General Public License version 3, which means that any user who has access to this application has the right to obtain access to the source code. More information at the links below:",
-        licensefulltext: "Full text of the license",
-        licensesourcecode: "Ticketz source code"
+          "O ticketz está licenciado sob a GNU Affero General Public License versão 3, isso significa que qualquer usuário que tiver acesso a esta aplicação tem o direito de obter acesso ao código fonte. Mais informações nos links abaixo:",
+        licensefulltext: "Texto completo da licença",
+        licensesourcecode: "Código fonte do ticketz"
       },
       schedules: {
-        title: "Schedules",
+        title: "Agendamentos",
         confirmationModal: {
-          deleteTitle: "Are you sure you want to delete this Schedule?",
-          deleteMessage: "This action cannot be undone."
+          deleteTitle: "Você tem certeza que quer excluir este Agendamento?",
+          deleteMessage: "Esta ação não pode ser revertida."
         },
         table: {
-          contact: "Contact",
-          body: "Message",
-          sendAt: "Scheduling Date",
-          sentAt: "Sending Date",
+          contact: "Contato",
+          body: "Mensagem",
+          sendAt: "Data de Agendamento",
+          sentAt: "Data de Envio",
           status: "Status",
-          actions: "Actions"
+          actions: "Ações"
         },
         buttons: {
-          add: "New Schedule"
+          add: "Novo Agendamento"
         },
         toasts: {
-          deleted: "Schedule deleted successfully."
+          deleted: "Agendamento excluído com sucesso."
         }
       },
       tags: {
         title: "Tags",
         confirmationModal: {
-          deleteTitle: "Are you sure you want to delete this Tag?",
-          deleteMessage: "This action cannot be undone."
+          deleteTitle: "Você tem certeza que quer excluir esta Tag?",
+          deleteMessage: "Esta ação não pode ser revertida."
         },
         table: {
-          name: "Name",
-          color: "Color",
-          tickets: "Tickets",
-          contacts: "Contacts",
-          actions: "Actions",
+          name: "Nome",
+          color: "Cor",
+          tickets: "Atendimentos",
+          contacts: "Contatos",
+          actions: "Ações",
           id: "Id",
           kanban: "Kanban"
         },
         buttons: {
-          add: "New Tag"
+          add: "Nova Tag"
         },
         toasts: {
-          deleted: "Tag deleted successfully."
+          deleted: "Tag excluído com sucesso."
         }
       },
       whitelabel: {
-        primaryColorLight: "Primary color light",
-        primaryColorDark: "Primary color dark",
-        lightLogo: "App logo light",
-        darkLogo: "App logo dark",
-        favicon: "App logo favicon",
-        appname: "App name",
-        logoHint: "Prefer SVG and aspect of 28:10",
-        faviconHint: "Prefer square SVG image or 512x512 PNG",
-        loginLinks: "Login links",
+        primaryColorLight: "Cor primária clara",
+        primaryColorDark: "Cor primária escura",
+        lightLogo: "Logo do app claro",
+        darkLogo: "Logo do app escuro",
+        favicon: "Favicon do app",
+        appname: "Nome do app",
+        logoHint: "Prefira SVG e aspecto de 28:10",
+        faviconHint: "Prefira imagem SVG quadrada ou PNG 512x512",
+        loginLinks: "Links do login",
         loginLinksHint:
-          "Add title and URL pairs to display below the login box on desktop and mobile.",
-        linkTitle: "Link title",
-        linkUrl: "Link URL",
-        removeLink: "Remove link",
-        sidePanelImage: "Login side panel image",
+          "Adicione pares de título e URL para exibir abaixo da caixa de login no desktop e no mobile.",
+        linkTitle: "Título do link",
+        linkUrl: "URL do link",
+        removeLink: "Remover link",
+        sidePanelImage: "Imagem lateral do login",
         sidePanelImageHint:
-          "Displayed on the left side of the login form on desktop layouts.",
-        backgroundContent: "Login background content",
+          "Exibida no lado esquerdo do formulário de login em telas desktop.",
+        backgroundContent: "Conteúdo de fundo do login",
         backgroundContentHint:
-          "Supports images, SVG files, and MP4 videos for the login screen background.",
-        noFileSelected: "No file selected yet."
+          "Aceita imagens, arquivos SVG e vídeos MP4 para o fundo da tela de login.",
+        noFileSelected: "Nenhum arquivo selecionado ainda."
       },
       settings: {
         group: {
-          general: "General",
-          timeouts: "Timeouts",
-          officeHours: "Office Hours",
-          groups: "Groups",
-          confidenciality: "Confidentiality",
+          general: "Geral",
+          timeouts: "Tempos de espera",
+          officeHours: "Horário de expediente",
+          groups: "Grupos",
+          confidenciality: "Confidencialidade",
           api: "API",
-          externalServices: "External Services",
-          serveradmin: "Server Administration"
+          externalServices: "Serviços externos",
+          serveradmin: "Administração do servidor"
         },
-        success: "Setting saved successfully.",
-        copiedToClipboard: "Copied to clipboard",
-        title: "Settings",
-        chatbotTicketTimeout: "Chatbot ticket timeout (minutes)",
-        chatbotTicketTimeoutAction: "Action after chatbot timeout",
+        success: "Configurações salvas com sucesso.",
+        copiedToClipboard: "Copiado para a área de transferência",
+        title: "Configurações",
+        chatbotTicketTimeout: "Timeout do chatbot (minutos)",
+        chatbotTicketTimeoutAction: "Ação do timeout do chatbot",
         settings: {
           userCreation: {
-            name: "User creation",
+            name: "Criação de usuário",
             options: {
-              enabled: "Enabled",
-              disabled: "Disabled"
+              enabled: "Ativado",
+              disabled: "Desativado"
             }
           }
         },
         validations: {
-          title: "validations",
+          title: "Avaliações",
           options: {
-            enabled: "enabled",
-            disabled: "disabled"
+            enabled: "Habilitado",
+            disabled: "Desabilitado"
           }
         },
         OfficeManagement: {
-          title: "Office Management",
+          title: "Gerenciamento de Expediente",
           options: {
-            disabled: "disabled",
-            ManagementByDepartment: "Management By Department",
-            ManagementByCompany: "Management By Company"
+            disabled: "Desabilitado",
+            ManagementByDepartment: "Gerenciamento Por Fila",
+            ManagementByCompany: "Gerenciamento Por Empresa"
           }
         },
         outOfHoursAction: {
-          title: "Out of Hours Action",
+          title: "Ação fora do expediente",
           options: {
-            pending: "Leave as pending",
-            closed: "Close ticket"
+            pending: "Deixar como pendente",
+            closed: "Fechar atendimento"
           }
         },
         IgnoreGroupMessages: {
-          title: "Ignore Group Messages",
+          title: "Ignorar Mensagens de Grupos",
           options: {
-            enabled: "enabled",
-            disabled: "disabled"
+            enabled: "Ativado",
+            disabled: "Desativado"
           }
         },
         soundGroupNotifications: {
-          title: "Sound on Group Notifications",
+          title: "Notificações de som de grupo",
           options: {
-            enabled: "enabled",
-            disabled: "disabled"
+            enabled: "Ativado",
+            disabled: "Desativado"
           }
         },
         groupsTab: {
-          title: "Groups Tab",
+          title: "Aba de Grupos",
           options: {
-            enabled: "enabled",
-            disabled: "disabled"
+            enabled: "Ativado",
+            disabled: "Desativado"
           }
         },
         VoiceAndVideoCalls: {
-          title: "Voice and video calls",
+          title: "Chamadas de Voz e Vídeo",
           options: {
-            enabled: "Ignore",
-            disabled: "unavailability report"
+            enabled: "Ignorar",
+            disabled: "informar indisponibilidade"
           }
         },
         AutomaticChatbotOutput: {
-          title: "Automatic Chatbot Output",
+          title: "Saída automática de chatbot",
           options: {
-            enabled: "enabled",
-            disabled: "disabled"
+            enabled: "Activado",
+            disabled: "Desativado"
           }
         },
         ShowNumericEmoticons: {
-          title: "Display numeric emojis in the queue",
+          title: "Exibir emojis numéricos na fila",
           options: {
-            enabled: "enabled",
-            disabled: "disabled"
+            enabled: "Activado",
+            disabled: "Desativado"
           }
         },
         QuickMessages: {
-          title: "Quick Messages",
+          title: "Mensagens Rápidas",
           options: {
-            enabled: "By company",
-            disabled: "By User"
+            enabled: "Por empresa",
+            disabled: "Por Usuário"
           }
         },
         AllowRegistration: {
-          title: "Allow Registration",
+          title: "Permitir cadastro",
           options: {
-            enabled: "enabled",
-            disabled: "disabled"
+            enabled: "Ativado",
+            disabled: "Desativado"
           }
         },
         FileUploadLimit: {
-          title: "File Upload Limit (MB)"
+          title: "Limite de Upload de arquivos (MB)"
         },
         FileDownloadLimit: {
-          title: "File Download Limit (MB)"
+          title: "Limite de Download de arquivos (MB)"
         },
         messageVisibility: {
-          title: "Message Visibility",
+          title: "Visibilidade da mensagem",
           options: {
-            respectMessageQueue: "Respect queue of message",
-            respectTicketQueue: "Respect queue of ticket"
+            respectMessageQueue: "Respeitar fila da mensagem",
+            respectTicketQueue: "Respeitar fila do atendimento"
           }
         },
         keepQueueAndUser: {
-          title: "Keep queue and user on closed ticket",
+          title: "Manter fila e usuário no atendimento fechado",
           options: {
-            enabled: "Enabled",
-            disabled: "Disabled"
+            enabled: "Ativado",
+            disabled: "Desativado"
           }
         },
         GracePeriod: {
-          title: "Subscription Grace Period (days)"
+          title: "Carência após vencimento (dias)"
         },
         ticketAcceptedMessage: {
-          title: "Ticket Accepted Message",
-          placeholder: "Enter your ticket accepted message here"
+          title: "Mensagem de atendimento aceito",
+          placeholder: "Digite sua mensagem de atendimento aceito aqui"
         },
         transferMessage: {
-          title: "Transfer Message",
-          placeholder: "Enter your transfer message here"
+          title: "Mensagem de transferência",
+          placeholder: "Digite sua mensagem de transferência aqui"
         },
         mustacheVariables: {
-          title: "Available variables:"
+          title: "Variáveis disponíveis:"
         },
         WelcomeGreeting: {
-          greetings: "Hello",
-          welcome: "Welcome to",
-          expirationTime: "Active until"
+          greetings: "Olá",
+          welcome: "Seja bem-vindo a",
+          expirationTime: "Ativo até"
         },
         Options: {
-          title: "Options"
+          title: "Opções"
         },
         Companies: {
-          title: "Companies"
+          title: "Empresas"
         },
         schedules: {
-          title: "schedules",
-          updateToNewFormat: "Update to new format"
+          title: "Horários",
+          updateToNewFormat: "Atualizar para novo formato"
         },
         Plans: {
-          title: "Plans",
-          public: "Public",
-          usersLimit: "Users limit",
-          connectionsLimit: "Connections limit",
-          queuesLimit: "Queues limit",
-          currencyCode: "Currency code (ISO 4217)"
+          title: "Planos",
+          public: "Público",
+          usersLimit: "Limite de usuários",
+          connectionsLimit: "Limite de conexões",
+          queuesLimit: "Limite de filas",
+          currencyCode: "Código da Moeda (ISO 4217)"
         },
         Help: {
-          title: "Help"
+          title: "Ajuda"
         },
         Whitelabel: {
           title: "Whitelabel"
         },
         PaymentGateways: {
-          title: "Pasarelas de pago"
+          title: "Payment gateways"
         },
         i18nSettings: {
-          title: "Translations"
+          title: "Traduções"
         },
         AIProvider: {
-          title: "AI Provider"
+          title: "Serviço de IA"
         },
         AudioTranscriptions: {
-          title: "Audio Transcriptions"
+          title: "Transcrição de áudio"
         },
         TagsMode: {
-          title: "Tags Mode",
+          title: "Modo de Tags",
           options: {
-            ticket: "Ticket",
-            contact: "Contact",
-            both: "Ticket and Contact"
+            ticket: "Atendimento",
+            contact: "Contato",
+            both: "Atendimento e Contato"
           }
         }
       },
       messagesList: {
         header: {
-          assignedTo: "Assigned to:",
+          assignedTo: "Atribuído à:",
           buttons: {
-            return: "Return",
-            resolve: "Resolve",
-            reopen: "Reopen",
-            accept: "Accept",
-            call: "Call",
-            endCall: "End Call"
+            return: "Retornar",
+            resolve: "Resolver",
+            reopen: "Reabrir",
+            accept: "Aceitar",
+            call: "Chamar",
+            endCall: "Encerrar Chamada"
           }
         }
       },
       messagesInput: {
-        placeholderOpen: "Type a message",
-        placeholderClosed: "Reopen or accept this ticket to send a message.",
-        signMessage: "Sign",
-        replying: "Replying",
-        editing: "Editing"
+        placeholderOpen: "Digite uma mensagem",
+        placeholderClosed:
+          "Reabra ou aceite esse atendimento para enviar uma mensagem.",
+        signMessage: "Assinar",
+        replying: "Respondendo",
+        editing: "Editando"
       },
       message: {
-        edited: "Edited",
-        forwarded: "Forwarded"
+        edited: "Editada",
+        forwarded: "Encaminhada"
       },
 
       contactDrawer: {
-        header: "Contact Information",
+        header: "Dados do contato",
         buttons: {
-          edit: "Edit Contact"
+          edit: "Editar contato"
         },
-        extraInfo: "Other information"
+        extraInfo: "Outras informações"
       },
       ticketOptionsMenu: {
-        schedule: "Schedule",
-        delete: "Delete",
-        transfer: "Transfer",
+        schedule: "Agendamento",
+        delete: "Deletar",
+        transfer: "Transferir",
         appointmentsModal: {
-          title: "Ticket Notes",
-          textarea: "Note",
-          placeholder: "Insert the information you want to record here"
+          title: "Observações do Atendimento",
+          textarea: "Observação",
+          placeholder: "Insira aqui a informação que deseja registrar"
         },
         confirmationModal: {
-          title: "Delete contact ticket",
-          message: "Attention! All messages related to the ticket will be lost."
+          title: "Deletar o atendimento do contato",
+          message:
+            "Atenção! Todas as mensagens relacionadas ao atendimento serão perdidas."
         },
         buttons: {
-          delete: "Delete",
-          cancel: "Cancel"
+          delete: "Excluir",
+          cancel: "Cancelar"
         }
       },
       confirmationModal: {
         buttons: {
           confirm: "Ok",
-          cancel: "Cancel"
+          cancel: "Cancelar"
         }
       },
       messageOptionsMenu: {
-        delete: "Delete",
-        edit: "Edit",
-        forward: "Forward",
-        history: "History",
-        reply: "Reply",
+        delete: "Deletar",
+        edit: "Editar",
+        forward: "Encaminhar",
+        history: "Histórico",
+        reply: "Responder",
         confirmationModal: {
-          title: "Delete message?",
-          message: "This action cannot be undone."
+          title: "Apagar mensagem?",
+          message: "Esta ação não pode ser revertida."
         }
       },
       messageHistoryModal: {
-        close: "Close",
-        title: "Message edit history"
+        close: "Fechar",
+        title: "Histórico de edição da mensagem"
       },
       presence: {
-        unavailable: "Unavailable",
-        available: "Available",
-        composing: "Composing...",
-        recording: "Recording...",
-        paused: "Paused"
+        unavailable: "Indisponível",
+        available: "Disponível",
+        composing: "Digitando...",
+        recording: "Gravando...",
+        paused: "Pausado"
       },
       privacyModal: {
-        title: "Edit Whatsapp Privacy",
+        title: "Editar Privacidade do Whatsapp",
         buttons: {
-          cancel: "Cancel",
-          okEdit: "Save"
+          cancel: "Cancelar",
+          okEdit: "Salvar"
         },
         form: {
           menu: {
-            all: "All",
-            none: "Nobody",
-            contacts: "My contacts",
-            contact_blacklist: "Selected contacts",
-            match_last_seen: "Match Last Seen",
-            known: "Known",
-            disable: "Disabled",
-            hrs24: "24 Hours",
-            dias7: "7 Days",
-            dias90: "90 Days"
+            all: "Todos",
+            none: "Ninguém",
+            contacts: "Meus contatos",
+            contact_blacklist: "Contatos selecionados",
+            match_last_seen: "Semelhante ao Visto por Último",
+            known: "Conhecidos",
+            disable: "Desativada",
+            hrs24: "24 Horas",
+            dias7: "7 Dias",
+            dias90: "90 Dias"
           },
-          readreceipts: "To update the Read Receipts privacy",
-          profile: "To update the Profile Picture privacy",
-          status: "To update the Messages privacy",
-          online: "To update the Online privacy",
-          last: "To update the LastSeen privacy",
-          groupadd: "To update the Groups Add privacy",
-          calladd: "To update the Call Add privacy",
-          disappearing: "To update the Default Disappearing Mode"
+          readreceipts: "Para atualizar a privacidade dos recibos de leitura",
+          profile: "Para atualizar a privacidade da foto do perfil",
+          status: "Para atualizar a privacidade do recados",
+          online: "Para atualizar a privacidade online",
+          last: "Para atualizar a privacidade do Último Visto",
+          groupadd: "Para atualizar a privacidade de Adicionar a grupos",
+          calladd: "Para atualizar a privacidade de Adicionar a Ligações",
+          disappearing: "Para atualizar o Modo de Desaparecimento Padrão"
         }
       },
       phoneNumberInput: {
-        country: "Country",
-        phoneNumber: "Phone Number",
-        localNumber: "Local Number"
+        country: "País",
+        phoneNumber: "Telefone",
+        localNumber: "Telefone"
       },
       frontendErrors: {
-        ERR_CONFIG_ERROR: "Configuration error. Please contact support.",
+        ERR_CONFIG_ERROR: "Erro de configuração. Por favor, contate o suporte.",
         ERR_CLOCK_OUT_OF_SYNC:
-          "Clock out of sync. Please check the date and time settings of your device.",
-        ERR_BACKEND_UNREACHABLE: "Backend unreachable. Please try again later.",
+          "Relógio fora de sincronia. Por favor, verifique as configurações de data e hora do seu dispositivo.",
+        ERR_BACKEND_UNREACHABLE:
+          "Backend inacessível. Por favor, tente novamente mais tarde.",
         ERR_BACKEND_NOT_READY:
-          "Backend is starting up and not ready yet. Retrying automatically."
+          "O backend está iniciando e ainda não está pronto. Tentando novamente automaticamente."
       },
       backendErrors: {
-        ERR_UNAUTHORIZED: "You are not authorized to perform this action.",
-        ERR_FORBIDDEN: "You do not have permission to access this resource.",
-        ERR_CHECK_NUMBER: "Check the number and try again.",
-        ERR_NO_OTHER_WHATSAPP: "There must be at least one default WhatsApp.",
+        ERR_UNAUTHORIZED: "Você não está autorizado a acessar este recurso.",
+        ERR_FORBIDDEN: "Você não tem permissão para acessar este recurso.",
+        ERR_CHECK_NUMBER: "Número não encontrado no Whatsapp.",
+        ERR_NO_OTHER_WHATSAPP: "Deve haver pelo menos um WhatsApp padrão.",
         ERR_NO_DEF_WAPP_FOUND:
-          "No default WhatsApp found. Check the connections page.",
+          "Nenhum WhatsApp padrão encontrado. Verifique a página de conexões.",
         ERR_WAPP_NOT_INITIALIZED:
-          "This WhatsApp session has not been initialized. Check the connections page.",
+          "Esta sessão do WhatsApp não foi inicializada. Verifique a página de conexões.",
         ERR_WAPP_CHECK_CONTACT:
-          "Could not check WhatsApp contact. Check the connections page.",
-        ERR_WAPP_INVALID_CONTACT: "This is not a valid WhatsApp number.",
+          "Não foi possível verificar o contato do WhatsApp. Verifique a página de conexões",
+        ERR_WAPP_INVALID_CONTACT: "Este não é um número de Whatsapp válido.",
         ERR_WAPP_DOWNLOAD_MEDIA:
-          "Could not download media from WhatsApp. Check the connections page.",
-        ERR_INVALID_CREDENTIALS: "Authentication error. Please try again.",
+          "Não foi possível baixar mídia do WhatsApp. Verifique a página de conexões.",
+        ERR_INVALID_CREDENTIALS:
+          "Erro de autenticação. Por favor, tente novamente.",
         ERR_SENDING_WAPP_MSG:
-          "Error sending WhatsApp message. Check the connections page.",
-        ERR_DELETE_WAPP_MSG: "Could not delete WhatsApp message.",
-        ERR_EDITING_WAPP_MSG: "Could not edit WhatsApp message.",
-        ERR_OTHER_OPEN_TICKET:
-          "There is already an open ticket for this contact.",
-        ERR_SESSION_EXPIRED: "Session expired. Please log in.",
+          "Erro ao enviar mensagem do WhatsApp. Verifique a página de conexões.",
+        ERR_DELETE_WAPP_MSG: "Não foi possível excluir a mensagem do WhatsApp.",
+        ERR_EDITING_WAPP_MSG: "Não foi possível editar a mensagem do WhatsApp.",
+        ERR_OTHER_OPEN_TICKET: "Já existe um atendimento aberto para este contato.",
+        ERR_SESSION_EXPIRED: "Sessão expirada. Por favor entre.",
         ERR_USER_CREATION_DISABLED:
-          "User creation has been disabled by the administrator.",
-        ERR_NO_PERMISSION:
-          "You do not have permission to access this resource.",
-        ERR_DUPLICATED_CONTACT: "A contact with this number already exists.",
-        ERR_NO_SETTING_FOUND: "No setting found with this ID.",
-        ERR_NO_CONTACT_FOUND: "No contact found with this ID.",
-        ERR_NO_TICKET_FOUND: "No ticket found with this ID.",
-        ERR_NO_USER_FOUND: "No user found with this ID.",
-        ERR_NO_WAPP_FOUND: "No WhatsApp found with this ID.",
-        ERR_CREATING_MESSAGE: "Error creating message in the database.",
-        ERR_CREATING_TICKET: "Error creating ticket in the database.",
+          "A criação do usuário foi desabilitada pelo administrador.",
+        ERR_NO_PERMISSION: "Você não tem permissão para acessar este recurso.",
+        ERR_DUPLICATED_CONTACT: "Já existe um contato com este número.",
+        ERR_NO_SETTING_FOUND: "Nenhuma configuração encontrada com este ID.",
+        ERR_NO_CONTACT_FOUND: "Nenhum contato encontrado com este ID.",
+        ERR_NO_TICKET_FOUND: "Nenhum atendimento encontrado com este ID.",
+        ERR_NO_USER_FOUND: "Nenhum usuário encontrado com este ID.",
+        ERR_NO_WAPP_FOUND: "Nenhum WhatsApp encontrado com este ID.",
+        ERR_CREATING_MESSAGE: "Erro ao criar mensagem no banco de dados.",
+        ERR_CREATING_TICKET: "Erro ao criar atendimento no banco de dados.",
         ERR_FETCH_WAPP_MSG:
-          "Error fetching message from WhatsApp, perhaps it is too old.",
+          "Erro ao buscar a mensagem no WhtasApp, talvez ela seja muito antiga.",
         ERR_QUEUE_COLOR_ALREADY_EXISTS:
-          "This color is already in use, choose another.",
+          "Esta cor já está em uso, escolha outra.",
         ERR_WAPP_GREETING_REQUIRED:
-          "Greeting message is mandatory when there is more than one queue.",
-        ERR_SUBSCRIPTION_CHECK_FAILED: "Subscription check failed.",
-        ERR_WAPP_NOT_FOUND: "Connection unavailable.",
-        ERR_SUBSCRIPTION_EXPIRED: "Your subscription has expired.",
-        ERR_UNKOWN: "Unknown error."
+          "A mensagem de saudação é obrigatório quando há mais de uma fila.",
+        ERR_SUBSCRIPTION_CHECK_FAILED: "Assinatura inválida ou não encontrada",
+        ERR_WAPP_NOT_FOUND: "Conexão indisponível",
+        ERR_SUBSCRIPTION_EXPIRED: "Assinatura expirada",
+        ERR_UNKOWN: "Erro desconhecido"
       },
       phoneCall: {
-        hangup: "Hang up"
+        hangup: "Desligar"
       },
       wavoipModal: {
-        title: "Enter your Wavoip connection token",
+        title: "Insira o token da sua conexão no Wavoip",
         instructions:
-          "By accessing the address below you can create an account with 50 free calls for testing",
+          "Acessando o endereço abaixo você pode criar uma conta com 50 ligações gratuitas para teste",
         coupon:
-          "When hiring the service use the coupon TICKETZ to get a discount!"
+          "Entre em contato com os administradores para adquirir um cupom de desconto!"
       },
       openHours: {
-        title: "Business Hours",
+        title: "Horários de Funcionamento",
         timezone: {
-          placeholder: "Select time zone",
-          searchPlaceholder: "Type to search...",
-          selected: "Selected time zone"
+          placeholder: "Selecione o fuso horário",
+          searchPlaceholder: "Digite para buscar...",
+          selected: "Fuso horário selecionado"
         },
         tabs: {
-          weekly: "Weekly Hours",
-          overrides: "Exceptions and Holidays"
+          weekly: "Horários Semanais",
+          overrides: "Exceções e Feriados"
         },
         weekly: {
-          title: "Weekly Business Hours",
+          title: "Horários de Funcionamento Semanais",
           description:
-            "Configure regular business hours for each day of the week.",
-          rule: "Rule",
-          days: "Days of the Week",
-          hours: "Hours",
-          closedMessage: "Closed (no hours defined)",
-          addHour: "Add Hours",
-          addRule: "Add New Weekly Rule",
-          from: "From",
-          to: "To",
-          until: "to"
+            "Configure os horários regulares de funcionamento para cada dia da semana.",
+          rule: "Regra",
+          days: "Dias da Semana",
+          hours: "Horários",
+          closedMessage: "Fechado (sem horários definidos)",
+          addHour: "Adicionar Horário",
+          addRule: "Adicionar Nova Regra Semanal",
+          from: "De",
+          to: "Até",
+          until: "até"
         },
         overrides: {
-          title: "Exceptions and Holidays",
+          title: "Exceções e Feriados",
           description:
-            "Configure specific dates with special hours or closures (holidays, events, etc.).",
-          exception: "Exception",
-          date: "Date",
-          label: "Description",
-          labelPlaceholder: "E.g.: Christmas, Carnival...",
-          repeat: "Repeat",
-          repeatNone: "Don't repeat",
-          repeatYearly: "Yearly",
-          closedDay: "Closed on this day",
-          specialHours: "Special Hours",
-          addHour: "Add Hours",
-          addException: "Add Exception or Holiday",
-          from: "From",
-          to: "To",
-          until: "to"
+            "Configure datas específicas com horários especiais ou fechamentos (feriados, eventos, etc.).",
+          exception: "Exceção",
+          date: "Data",
+          label: "Descrição",
+          labelPlaceholder: "Ex: Natal, Carnaval...",
+          repeat: "Repetição",
+          repeatNone: "Não repetir",
+          repeatYearly: "Anual",
+          closedDay: "Fechado neste dia",
+          specialHours: "Horários Especiais",
+          addHour: "Adicionar Horário",
+          addException: "Adicionar Exceção ou Feriado",
+          from: "De",
+          to: "Até",
+          until: "até"
         },
         days: {
-          mon: "Monday",
-          tue: "Tuesday",
-          wed: "Wednesday",
-          thu: "Thursday",
-          fri: "Friday",
-          sat: "Saturday",
-          sun: "Sunday"
+          mon: "Segunda",
+          tue: "Terça",
+          wed: "Quarta",
+          thu: "Quinta",
+          fri: "Sexta",
+          sat: "Sábado",
+          sun: "Domingo"
         }
       },
       ticketz: {
         registration: {
-          header: "Register in the Ticketz user base",
+          header: "Cadastre-se na base de usuários do SysWhats",
           description:
-            "Fill in the fields below to register in the Ticketz user base and receive news about the project.",
-          name: "Name",
-          country: "Country",
-          phoneNumber: "Whatsapp Number",
-          submit: "Register"
+            "Preencha os campos abaixo para se cadastrar na base de usuários do SysWhats e receber novidades sobre o projeto.",
+          name: "Nome",
+          country: "País",
+          phoneNumber: "Número de Whatsapp",
+          submit: "Cadastrar"
         },
         proAd: {
-          imageAlt: "Ticketz PRO screenshot",
+          imageAlt: "Captura de tela do Ticketz PRO",
           title: "Ticketz PRO",
           features: {
             officialChannels:
-              "Official WhatsApp - Instagram - Messenger and more",
-            exclusiveFeatures: "Exclusive features",
-            advancedSupport: "Advanced support",
-            easyMigration: "Easy migration"
+              "Whatsapp Oficial - Instagram - Messenger e outros",
+            exclusiveFeatures: "Features exclusivas",
+            advancedSupport: "Suporte Avançado",
+            easyMigration: "Migração Facilitada"
           },
-          subscribePrice: "Subscribe for {{monthlyPrice}}/month",
-          subscribeSubtitle: "directly inside the system",
-          ctaUpgrade: "Click for upgrade instructions",
-          ctaVisitSite: "Click to visit the website!",
+          subscribePrice: "Assine por {{monthlyPrice}}/mês",
+          subscribeSubtitle: "direto dentro do sistema",
+          ctaUpgrade: "Clique para instruções de Upgrade",
+          ctaVisitSite: "Clique para visitar o site!",
           instructions: {
-            title: "Upgrade Instructions",
+            title: "Instruções de Upgrade",
             stepIntro:
-              "If you installed the images provided by the project on a server or VPS using the simplified instructions, all you need to do is access your server and run the command below:",
+              "Se você instalou as imagens disponibilizadas pelo projeto em um servidor ou VPS utilizando as instruções facilitadas tudo o que você precisa fazer é acessar seu servidor e digitar o comando abaixo:",
             stepInstall:
-              'In a few moments Ticketz PRO will be installed with all your data; then go to the user menu, click "Ticketz PRO Subscription", and complete your subscription.',
+              'Em instantes o Ticketz PRO estará instalado com todos os teus dados, agora só precisa ir até o menu de usuário, clicar em "Assinatura do Ticketz PRO" e fazer a sua assinatura.',
             helpPrefix:
-              "If your installation is different or you believe you need help installing Ticketz PRO, ",
-            helpLink: "contact us",
-            helpSuffix: " and we will help you!"
+              "Se a tua instalação for diferente ou acredita que precisa de auxílio para instalar o Ticketz Pro, ",
+            helpLink: "entre em contato",
+            helpSuffix: " que nós ajudamos!"
           }
         },
         support: {
-          title: "Support Ticketz project",
-          mercadopagotitle: "Credit Card",
-          recurringbrl: "Recurring donations in BRL",
-          paypaltitle: "Credit Card",
-          international: "Donations in USD"
+          title: "Apoie o projeto Ticketz Open Source",
+          mercadopagotitle: "Cartão de Crédito",
+          recurringbrl: "Doação recorrente em R$",
+          paypaltitle: "Cartão de Crédito",
+          international: "Internacional em US$"
         }
       }
     }
