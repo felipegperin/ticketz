@@ -77,6 +77,12 @@ export const store = async (req: Request, res: Response): Promise<Response> => {
   const { companyId } = req.user;
   const newContact: ContactData = req.body;
   newContact.number = newContact.number.replace("-", "").replace(" ", "");
+  newContact.number = newContact.number.replace(/\D/g, "");
+
+	// Se não começa com 55, adiciona
+	if (!newContact.number.startsWith("55")) {
+	  newContact.number = "55" + newContact.number;
+	}
 
   const schema = Yup.object().shape({
     name: Yup.string().required(),

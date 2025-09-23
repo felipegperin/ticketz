@@ -276,11 +276,7 @@ const MainListItems = (props) => {
               primary={i18n.t("mainDrawer.listItems.tickets")}
               icon={<WhatsAppIcon />}
             />
-      <ListItemLink
-        to="/todolist"
-        primary={i18n.t("mainDrawer.listItems.tasks")}
-        icon={<BorderColorIcon />}
-      />
+
             <ListItemLink
               to="/quick-messages"
               primary={i18n.t("mainDrawer.listItems.quickMessages")}
@@ -445,11 +441,7 @@ const MainListItems = (props) => {
               primary={i18n.t("mainDrawer.listItems.users")}
               icon={<PeopleAltOutlinedIcon />}
             />
-            <ListItemLink
-              to="/messages-api"
-              primary={i18n.t("mainDrawer.listItems.messagesAPI")}
-              icon={<CodeRoundedIcon />}
-            />
+            
              <ListItemLink
                 to="/financeiro"
                 primary={i18n.t("mainDrawer.listItems.financeiro")}
