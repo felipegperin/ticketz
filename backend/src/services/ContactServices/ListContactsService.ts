@@ -37,9 +37,8 @@ function normalizePhone(input: string): string[] {
 }
 function buildWhereCondition(normalizedSearchParam: string, companyId: number) {
 	const onlyDigits = normalizedSearchParam.replace(/\D/g, "");
-
 	let phoneCondition;
-	if (onlyDigits.length >= 12) {
+	if (onlyDigits.length >= 10) {
 		// número completo → compara exato
 		const phones = normalizePhone(normalizedSearchParam);
 		phoneCondition = { number: { [Op.in]: phones } };

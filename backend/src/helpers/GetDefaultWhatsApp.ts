@@ -8,10 +8,12 @@ const GetDefaultWhatsApp = async (
   queueId?: number
 ): Promise<Whatsapp> => {
   let whatsapp: Whatsapp | null = null;
+  let randomIndex = null;
+  let whatsapps = null;
 
   if (queueId) {
     // Busca todos os WhatsApps vinculados a essa fila
-    const whatsapps = await Whatsapp.findAll({
+    whatsapps = await Whatsapp.findAll({
       where: {
         companyId,
         channel: "whatsapp",
@@ -27,9 +29,30 @@ const GetDefaultWhatsApp = async (
 
     if (whatsapps.length > 0) {
       // Se tem mais de um, escolhe randomicamente
-      const randomIndex = Math.floor(Math.random() * whatsapps.length);
+      randomIndex = Math.floor(Math.random() * whatsapps.length);
       whatsapp = whatsapps[randomIndex];
+      return whatsapp;
     }
+    whatsapps = await Whatsapp.findAll({
+      where: {
+        companyId,
+        channel: "whatsapp"
+      },
+      include: [
+        {
+          model: WhatsappQueue,
+          where: { queueId }
+        }
+      ]
+    });
+
+    if (whatsapps.length > 0) {
+      // Se tem mais de um, escolhe randomicamente
+      randomIndex = Math.floor(Math.random() * whatsapps.length);
+      whatsapp = whatsapps[randomIndex];
+      return whatsapp;
+    }
+    throw new AppError("ERR_NO_DEF_WAPP_FOUND");
   }
 
   if (!whatsapp) {
