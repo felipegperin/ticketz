@@ -1,6 +1,5 @@
 import { Sequelize, Op } from "sequelize";
 import QuickMessage from "../../models/QuickMessage";
-import User from "../../models/User";
 
 interface Request {
   searchParam?: string;
@@ -21,40 +20,26 @@ const ListService = async ({
   companyId,
   userId
 }: Request): Promise<Response> => {
-  const companyIdNum = Number(companyId);
-  const userIdNum = Number(userId);
-
-  const limit = 20;
-  const offset = limit * (+pageNumber - 1);
-
-  // 🔑 Busca todos IDs dos admins da mesma company
-  const admins = await User.findAll({
-    attributes: ["id"],
-    where: {
-      companyId: companyIdNum,
-      profile: "admin"
-    }
-  });
-  const adminIds = admins.map(a => a.id);
-
-  // 🔑 Monta where
-  const whereCondition: any = {
-    companyId: companyIdNum,
+  let whereCondition = {
+    [Op.or]: [
+      {
+        shortcode: Sequelize.where(
+          Sequelize.fn("LOWER", Sequelize.col("shortcode")),
+          "LIKE",
+          `%${searchParam.toLowerCase().trim()}%`
+        )
+      }
+    ],
+    companyId: {
+      [Op.eq]: companyId
+    },
     userId: {
-      [Op.or]: [userIdNum, ...adminIds]
+      [Op.eq]: userId
     }
   };
 
-  if (searchParam.trim()) {
-    whereCondition[Op.or] = [
-      Sequelize.where(
-        Sequelize.fn("LOWER", Sequelize.col("shortcode")),
-        {
-          [Op.like]: `%${searchParam.toLowerCase().trim()}%`
-        }
-      )
-    ];
-  }
+  const limit = 20;
+  const offset = limit * (+pageNumber - 1);
 
   const { count, rows: records } = await QuickMessage.findAndCountAll({
     where: whereCondition,
