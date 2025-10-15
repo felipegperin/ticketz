@@ -11,7 +11,10 @@ import UpdateContactService from "../services/ContactServices/UpdateContactServi
 import DeleteContactService from "../services/ContactServices/DeleteContactService";
 import GetContactService from "../services/ContactServices/GetContactService";
 
-import CheckContactNumber from "../services/WbotServices/CheckNumber";
+import CheckContactNumber, {
+  CheckNumberAndCreateContact,
+  IOnWhatsapp
+} from "../services/WbotServices/CheckNumber";
 import AppError from "../errors/AppError";
 import SimpleListService, {
   SearchContactParams
@@ -21,6 +24,11 @@ import ContactCustomField from "../models/ContactCustomField";
 import { logger } from "../utils/logger";
 import Contact from "../models/Contact";
 import { GetCompanySetting } from "../helpers/CheckSettings";
+import WhatsappLidMap from "../models/WhatsappLidMap";
+import { verifyContact } from "../services/WbotServices/verifyContact";
+import { getWbot } from "../libs/wbot";
+import GetDefaultWhatsApp from "../helpers/GetDefaultWhatsApp";
+import { csvDetectDelimiter } from "../helpers/csvDetectDelimiter";
 
 type IndexQuery = {
   searchParam: string;
@@ -97,22 +105,19 @@ export const store = async (req: Request, res: Response): Promise<Response> => {
     throw new AppError(err.message);
   }
 
+  let contact: Contact;
   if (!newContact.isGroup) {
-    const validNumber = await CheckContactNumber(newContact.number, companyId);
-    const number = validNumber.jid.replace(/\D/g, "");
-    newContact.number = number;
+    contact = await CheckNumberAndCreateContact(
+      newContact.number,
+      newContact.name,
+      companyId
+    );
+  } else {
+    contact = await CreateContactService({
+      ...newContact,
+      companyId
+    });
   }
-
-  /**
-   * Código desabilitado por demora no retorno
-   */
-  // const profilePicUrl = await GetProfilePicUrl(validNumber.jid, companyId);
-
-  const contact = await CreateContactService({
-    ...newContact,
-    // profilePicUrl,
-    companyId
-  });
 
   const io = getIO();
   io.to(`company-${companyId}-mainchannel`).emit(
@@ -153,9 +158,10 @@ export const update = async (
     throw new AppError(err.message);
   }
 
+  let checked: IOnWhatsapp;
   if (!contactData.isGroup && contactData.number.match(/^\d+$/)) {
-    const validNumber = await CheckContactNumber(contactData.number, companyId);
-    const number = validNumber.jid.replace(/\D/g, "");
+    checked = await CheckContactNumber(contactData.number, companyId);
+    const number = checked.jid.replace(/\D/g, "");
     contactData.number = number;
   }
 
@@ -166,6 +172,19 @@ export const update = async (
     contactId,
     companyId
   });
+
+  if (checked) {
+    await WhatsappLidMap.destroy({
+      where: { contactId: contact.id }
+    });
+    const defaultWhatsapp = await GetDefaultWhatsApp(companyId);
+    const wbot = getWbot(defaultWhatsapp.id);
+    await verifyContact(
+      { id: checked.jid, lid: checked.lid, name: contact.name },
+      wbot,
+      companyId
+    );
+  }
 
   const io = getIO();
   io.to(`company-${companyId}-mainchannel`).emit(
@@ -263,63 +282,68 @@ export const importCsv = async (
     throw new AppError("ERR_NO_FILE", 400);
   }
 
-  const parser = csvParser(
-    { delimiter: ",", columns: true },
-    async (err, data) => {
-      if (err) {
-        throw new AppError("ERR_INVALID_CSV", 400);
+  let delimiter = ",";
+  try {
+    const firstLine = fs.readFileSync(file.path, "utf8").split("\n")[0];
+    delimiter = firstLine.includes(";") ? ";" : ",";
+  } catch (error) {
+    throw new AppError("ERR_INVALID_CSV", 400);
+  }
+
+  const parser = csvParser({ delimiter, columns: true }, async (err, data) => {
+    if (err) {
+      throw new AppError("ERR_INVALID_CSV", 400);
+    }
+
+    data.forEach(async (record: any) => {
+      let extraInfo: any[];
+      try {
+        extraInfo = JSON.parse(record.ExtraInfo);
+      } catch (error) {
+        extraInfo = [];
       }
 
-      data.forEach(async (record: any) => {
-        let extraInfo;
-        try {
-          extraInfo = JSON.parse(record.ExtraInfo);
-        } catch (error) {
-          extraInfo = [];
-        }
+      const contact = {
+        companyId,
+        name: record.name || record.Name,
+        number: record.number || record.Number,
+        email: record.email || record.Email,
+        extraInfo
+      };
 
-        const contact = {
-          companyId,
-          name: record.name || record.Name,
-          number: record.number || record.Number,
-          email: record.email || record.Email,
-          extraInfo
-        };
-
-        Object.keys(record).forEach((key: string) => {
-          if (
-            key !== "name" &&
-            key !== "number" &&
-            key !== "email" &&
-            key !== "Name" &&
-            key !== "Number" &&
-            key !== "Email" &&
-            key !== "ExtraInfo" &&
-            record[key]
-          ) {
-            contact.extraInfo.push({
-              name: key,
-              value: record[key]
-            });
-          }
-        });
-
-        try {
-          const newContact = await CreateContactService(contact);
-          const io = getIO();
-          io.to(`company-${companyId}-mainchannel`).emit(
-            `company-${companyId}-contact`,
-            {
-              action: "update",
-              contact: newContact
-            }
-          );
-        } catch (error) {
-          logger.error({ contact }, `Error creating contact: ${error.message}`);
+      Object.keys(record).forEach((key: string) => {
+        if (
+          key !== "name" &&
+          key !== "number" &&
+          key !== "email" &&
+          key !== "Name" &&
+          key !== "Number" &&
+          key !== "Email" &&
+          key !== "ExtraInfo" &&
+          record[key]
+        ) {
+          contact.extraInfo.push({
+            name: key,
+            value: record[key]
+          });
         }
       });
-    }
-  );
+
+      try {
+        const newContact = await CreateContactService(contact);
+        const io = getIO();
+        io.to(`company-${companyId}-mainchannel`).emit(
+          `company-${companyId}-contact`,
+          {
+            action: "update",
+            contact: newContact
+          }
+        );
+      } catch (error) {
+        logger.error({ contact }, `Error creating contact: ${error.message}`);
+      }
+    });
+  });
 
   const readable = fs.createReadStream(file.path);
 
@@ -367,15 +391,19 @@ export const exportCsv = async (
     };
   });
 
-  stringify(records, { header: true }, (err, output) => {
-    if (err) {
-      throw new AppError("ERR_GENERATING_CSV", 500);
-    }
+  stringify(
+    records,
+    { header: true, delimiter: csvDetectDelimiter(req) },
+    (err, output) => {
+      if (err) {
+        throw new AppError("ERR_GENERATING_CSV", 500);
+      }
 
-    res.setHeader("Content-disposition", "attachment; filename=contacts.csv");
-    res.set("Content-Type", "text/csv");
-    res.status(200).send(output);
-  });
+      res.setHeader("Content-disposition", "attachment; filename=contacts.csv");
+      res.set("Content-Type", "text/csv");
+      res.status(200).send(output);
+    }
+  );
 
   return res;
 };

@@ -282,6 +282,10 @@ const messages = {
           adminProfile: "Administrador",
           userProfile: "Usuário",
         },
+        listItems:{
+          adminProfile: "Administrator",
+          userProfile: "User",
+        },
         form: {
           name: "Nome",
           email: "Email",
@@ -679,7 +683,12 @@ const messages = {
         },
       },
       campaignsConfig: {
-        title: "Configurações de Campanhas",
+        title: "Campaign Configurations",
+        intervals: "Intervals",
+        messageInterval: "Message Interval (seconds)",
+        longerIntervalAfter: "Longer Interval After (messages)",
+        longerInterval: "Longer Interval (seconds)",
+        addVariable: "Add Variable",
       },
       queues: {
         title: "Filas & Chatbot",

@@ -13,7 +13,8 @@ import {
   WAMessage,
   WAMessageUpdate,
   WAMessageStubType,
-  WAGenericMediaMessage
+  WAGenericMediaMessage,
+  WALocationMessage
 } from "libzapitu-rf";
 import { Mutex } from "async-mutex";
 import { Op } from "sequelize";
@@ -88,18 +89,24 @@ const getTypeMessage = (msg: proto.IWebMessageInfo): string => {
   return getContentType(msg.message);
 };
 
-const msgLocation = (
-  image: Uint8Array,
-  latitude: number,
-  longitude: number
-) => {
-  if (image) {
-    const b64 = Buffer.from(image).toString("base64");
+const msgLocationBody = (locationMessage: WALocationMessage) => {
+  if (!locationMessage) return "";
 
-    const data = `data:image/png;base64, ${b64} | https://maps.google.com/maps?q=${latitude}%2C${longitude}&z=17&hl=pt-BR|${latitude}, ${longitude} `;
-    return data;
+  let body = "📍\n";
+
+  if (locationMessage.name) {
+    body += `*${locationMessage.name}*\n`;
   }
-  return "";
+
+  if (locationMessage.address) {
+    body += `_${locationMessage.address}_\n`;
+  }
+
+  if (locationMessage.degreesLatitude && locationMessage.degreesLongitude) {
+    body += `https://maps.google.com/maps?q=${locationMessage.degreesLatitude}%2C${locationMessage.degreesLongitude}&z=17&hl=pt-BR\n`;
+  }
+
+  return body;
 };
 
 export const getBodyFromTemplateMessage = (
@@ -168,12 +175,7 @@ export const getBodyMessage = (msg: proto.IMessage): string | null => {
         JSON.stringify({
           ticketzvCard: msg.contactsArrayMessage.contacts
         }),
-      // locationMessage: `Latitude: ${msg.locationMessage?.degreesLatitude} - Longitude: ${msg.locationMessage?.degreesLongitude}`,
-      locationMessage: msgLocation(
-        msg?.locationMessage?.jpegThumbnail,
-        msg?.locationMessage?.degreesLatitude,
-        msg?.locationMessage?.degreesLongitude
-      ),
+      locationMessage: msgLocationBody(msg?.locationMessage),
       liveLocationMessage: `Latitude: ${msg?.liveLocationMessage?.degreesLatitude} - Longitude: ${msg?.liveLocationMessage?.degreesLongitude}`,
       documentMessage: msg?.documentMessage?.caption,
       documentWithCaptionMessage:
@@ -248,7 +250,7 @@ const getSenderMessage = (
   return senderId && jidNormalizedUser(senderId);
 };
 
-const getContactMessage = async (msg: proto.IWebMessageInfo, wbot: Session) => {
+const getContactMessage = async (msg: WAMessage, wbot: Session) => {
   const isGroup = msg.key.remoteJid.includes("g.us");
   const rawNumber = msg.key.remoteJid.replace(/\D/g, "");
   return isGroup
@@ -258,6 +260,8 @@ const getContactMessage = async (msg: proto.IWebMessageInfo, wbot: Session) => {
       }
     : {
         id: msg.key.remoteJid,
+        lid: msg?.key?.sender_lid,
+        jid: msg?.key?.sender_pn,
         name: msg.key.fromMe ? rawNumber : msg.pushName
       };
 };
@@ -672,15 +676,22 @@ export const verifyMediaMessage = async (
     );
 
     if (apiKey) {
-      const audioTranscription = await transcriber(
-        mediaUrl.startsWith("http")
-          ? mediaUrl
-          : `${getPublicPath()}/${mediaUrl}`,
-        { apiKey, provider },
-        filename
-      );
-      if (audioTranscription) {
-        body = audioTranscription;
+      try {
+        const audioTranscription = await transcriber(
+          mediaUrl.startsWith("http")
+            ? mediaUrl
+            : `${getPublicPath()}/${mediaUrl}`,
+          { apiKey, provider },
+          filename
+        );
+        if (audioTranscription) {
+          body = audioTranscription;
+        }
+      } catch (error) {
+        logger.error(
+          { message: error?.message },
+          "Error transcribing audio message"
+        );
       }
     }
   }
@@ -1458,7 +1469,7 @@ const handleChartbot = async (
 };
 
 const handleMessage = async (
-  msg: proto.IWebMessageInfo,
+  msg: WAMessage,
   wbot: Session,
   companyId: number,
   queueId?: number

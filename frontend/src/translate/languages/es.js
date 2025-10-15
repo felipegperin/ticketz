@@ -10,6 +10,7 @@ const messages = {
         save: "Guardar",
         confirm: "Confirmar",
         close: "Cerrar",
+        closed: "Cerrado",
         error: "Error",
         success: "Éxito",
         actions: "Acciones",
@@ -23,6 +24,7 @@ const messages = {
         connection: "Conexión",
         queue: "Cola",
         contact: "Contacto",
+        messages: "Mensajes",
         whatsappNumber: "Número de WhatsApp",
         dueDate: "Fecha de vencimiento",
         copy: "Copiar",
@@ -30,11 +32,13 @@ const messages = {
         proceed: "Proceder",
         enabled: "Activado",
         disabled: "Desactivado",
+        undefined: "Indefinido",
         yes: "Sí",
         no: "No",
         noqueue: "Sin cola",
         rating: "Calificación",
         transferTo: "Transferir a",
+        key: "Clave",
         value: "Valor",
       },
       signup: {
@@ -275,6 +279,10 @@ const messages = {
         title: {
           add: "Agregar usuario",
           edit: "Editar usuario",
+        },
+        listItems:{
+          adminProfile: "Administrador",
+          userProfile: "Usuario",
         },
         form: {
           name: "Nombre",
@@ -672,6 +680,11 @@ const messages = {
       },
       campaignsConfig: {
         title: "Configuraciones de Campañas",
+        intervals: "Intervalos",
+        messageInterval: "Intervalo entre mensajes (segundos)",
+        longerIntervalAfter: "Intervalo mayor después de (mensajes)",
+        longerInterval: "Intervalo mayor (segundos)",
+        addVariable: "Agregar variable",
       },
       queues: {
         title: "Colas y Chatbot",
