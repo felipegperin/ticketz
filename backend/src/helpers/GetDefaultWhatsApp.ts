@@ -11,7 +11,7 @@ const GetDefaultWhatsApp = async (
   let randomIndex = null;
   let whatsapps = null;
 
-  if (queueId) {
+  if (queueId != null) {
     // Busca todos os WhatsApps vinculados a essa fila
     whatsapps = await Whatsapp.findAll({
       where: {

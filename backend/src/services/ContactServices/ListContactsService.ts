@@ -47,6 +47,7 @@ function buildWhereCondition(normalizedSearchParam: string, companyId: number) {
 		phoneCondition = { number: { [Op.like]: `%${onlyDigits}%` } };
 	}
 
+	const escaped = normalizedSearchParam.replace(/'/g, "''");
 	return {
 		[Op.or]: [
 			{
@@ -57,7 +58,7 @@ function buildWhereCondition(normalizedSearchParam: string, companyId: number) {
 				),
 				{
 				[Op.like]: Sequelize.literal(
-					`'%' || UNACCENT('${normalizedSearchParam}') || '%'`
+					`'%' || UNACCENT('${escaped}') || '%'`
 				)
 				}
 			)
