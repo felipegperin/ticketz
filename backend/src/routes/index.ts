@@ -8,6 +8,7 @@ import ticketRoutes from "./ticketRoutes";
 import whatsappRoutes from "./whatsappRoutes";
 import messageRoutes from "./messageRoutes";
 import whatsappSessionRoutes from "./whatsappSessionRoutes";
+import buildCaptureExtensionRoutes from "./buildCaptureExtensionRoutes";
 import queueRoutes from "./queueRoutes";
 import companyRoutes from "./companyRoutes";
 import planRoutes from "./planRoutes";
@@ -32,6 +33,7 @@ import versionRoutes from "./versionRoutes";
 import ticketzOSSRoutes from "./ticketzOSSRoutes";
 import i18nRoutes from "./i18nRoutes";
 import wavoipRoutes from "./wavoipRoutes";
+import dockerRoutes from "./dockerRoutes";
 
 const routes = Router();
 
@@ -40,6 +42,7 @@ routes.use("/auth", authRoutes);
 routes.use(settingRoutes);
 routes.use(contactRoutes);
 routes.use(ticketRoutes);
+routes.use(buildCaptureExtensionRoutes);
 routes.use(whatsappRoutes);
 routes.use(messageRoutes);
 routes.use(messageRoutes);
@@ -68,5 +71,6 @@ routes.use(versionRoutes);
 routes.use(ticketzOSSRoutes);
 routes.use(i18nRoutes);
 routes.use(wavoipRoutes);
+routes.use(dockerRoutes);
 
 export default routes;
