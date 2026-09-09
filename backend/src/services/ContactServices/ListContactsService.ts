@@ -1,5 +1,9 @@
 import { Sequelize, Op } from "sequelize";
 import Contact from "../../models/Contact";
+import {
+  buildPhoneCandidates,
+  FULL_NUMBER_MIN_DIGITS
+} from "../../helpers/ContactSearchPhone";
 
 interface Request {
   searchParam?: string;
@@ -13,62 +17,47 @@ interface Response {
   hasMore: boolean;
 }
 
-function normalizePhone(input: string): string[] {
-	// remove tudo que não for número
-	let digits = input.replace(/\D/g, "");
+function buildWhereCondition(searchTerm: string, companyId: number) {
+  const onlyDigits = searchTerm.replace(/\D/g, "");
+  const escaped = searchTerm.replace(/'/g, "''");
 
-	// Se não começa com 55, adiciona
-	if (!digits.startsWith("55")) {
-	digits = "55" + digits;
-	}
+  const nameCondition = {
+    name: Sequelize.where(
+      Sequelize.fn(
+        "LOWER",
+        Sequelize.fn("UNACCENT", Sequelize.col("Contact.name"))
+      ),
+      {
+        [Op.like]: Sequelize.literal(`'%' || UNACCENT('${escaped}') || '%'`)
+      }
+    )
+  };
 
-	// monta as duas versões
-	const ddi = digits.substring(0, 2); // 55
-	const ddd = digits.substring(2, 4); // ex: 44
-	const rest = digits.substring(4);
+  const companyCondition = {
+    companyId: {
+      [Op.eq]: companyId
+    }
+  };
 
-	const withNine =
-	ddi + ddd + (rest.startsWith("9") ? rest : "9" + rest);
+  // Busca sem nenhum dígito (por nome, ou vazia) não tem condição de telefone
+  // a aplicar. Incluir uma aqui casaria com todo contato e anularia o filtro
+  // de nome, retornando a base inteira.
+  if (!onlyDigits) {
+    return {
+      ...nameCondition,
+      ...companyCondition
+    };
+  }
 
-	const withoutNine =
-	ddi + ddd + (rest.startsWith("9") ? rest.substring(1) : rest);
+  const phoneCondition =
+    onlyDigits.length >= FULL_NUMBER_MIN_DIGITS
+      ? { number: { [Op.in]: buildPhoneCandidates(onlyDigits) } }
+      : { number: { [Op.like]: `%${onlyDigits}%` } };
 
-	return [withNine, withoutNine];
-}
-function buildWhereCondition(normalizedSearchParam: string, companyId: number) {
-	const onlyDigits = normalizedSearchParam.replace(/\D/g, "");
-	let phoneCondition;
-	if (onlyDigits.length >= 10) {
-		// número completo → compara exato
-		const phones = normalizePhone(normalizedSearchParam);
-		phoneCondition = { number: { [Op.in]: phones } };
-	} else {
-		// número parcial → LIKE
-		phoneCondition = { number: { [Op.like]: `%${onlyDigits}%` } };
-	}
-
-	const escaped = normalizedSearchParam.replace(/'/g, "''");
-	return {
-		[Op.or]: [
-			{
-			name: Sequelize.where(
-				Sequelize.fn(
-				"LOWER",
-				Sequelize.fn("UNACCENT", Sequelize.col("Contact.name"))
-				),
-				{
-				[Op.like]: Sequelize.literal(
-					`'%' || UNACCENT('${escaped}') || '%'`
-				)
-				}
-			)
-			},
-			phoneCondition
-		],
-		companyId: {
-			[Op.eq]: companyId
-		}
-	};
+  return {
+    [Op.or]: [nameCondition, phoneCondition],
+    ...companyCondition
+  };
 }
 
 const ListContactsService = async ({
@@ -77,7 +66,7 @@ const ListContactsService = async ({
   companyId
 }: Request): Promise<Response> => {
   const normalizedSearchParam = searchParam.toLowerCase().trim();
-  const whereCondition = buildWhereCondition(normalizedSearchParam,companyId);
+  const whereCondition = buildWhereCondition(normalizedSearchParam, companyId);
 
   const limit = 20;
   const offset = limit * (+pageNumber - 1);
